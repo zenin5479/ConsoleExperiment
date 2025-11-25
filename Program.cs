@@ -21,8 +21,8 @@ namespace ConsoleExperiment
             }
          }
 
-         string contents = "";
-         string url = "http://msdn.microsoft.com";
+         string contents;
+         string url = "https://example.com";
 
          using (WebClient client = new WebClient())
          {
