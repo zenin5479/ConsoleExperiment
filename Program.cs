@@ -10,18 +10,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com");
-         request.Method = "GET";
-         using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-         {
-            using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
-            {
-               string result = streamReader.ReadToEnd();
-               Console.WriteLine(result);
-            }
-         }
-
-         // Наиболее простым, способом инициализации GET и POST запросов,
+        // Наиболее простым, способом инициализации GET и POST запросов,
          // является использование объекта класса WebClient из пространства имён System.Net
          // Реализация GET запроса
          string contents;
