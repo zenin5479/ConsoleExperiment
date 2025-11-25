@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 
@@ -27,7 +28,6 @@ namespace ConsoleExperiment
          string contents;
          // Адрес ресурса, к которому выполняется запрос
          string url = "https://example.com";
-         
          // Создаём объект WebClient
          using (WebClient client = new WebClient())
          {
@@ -39,7 +39,14 @@ namespace ConsoleExperiment
          Console.WriteLine(contents);
 
          // POST запрос реализует не сложнее, но уже предполагает обязательное наличие параметров запроса 
-
+         string ur = "https://example.com";
+         using (var webClient = new WebClient())
+         {
+            webClient.QueryString.Add("format", "json");
+            // Выполняем запрос по адресу и получаем ответ в виде строки
+            contents = webClient.DownloadString(ur);
+            Console.WriteLine(contents);
+         }
 
          Console.ReadKey();
       }
