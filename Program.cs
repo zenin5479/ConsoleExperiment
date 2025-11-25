@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 
 // Отправка синхронных запросов с помощью HttpClient
 
@@ -8,16 +10,16 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         //HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com");
-         //request.Method = "GET";
-         //using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-         //{
-         //   using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
-         //   {
-         //     string result = streamReader.ReadToEnd();
-         //      Console.WriteLine(result);
-         //   }
-         //}
+         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com");
+         request.Method = "GET";
+         using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+         {
+            using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
+            {
+               string result = streamReader.ReadToEnd();
+               Console.WriteLine(result);
+            }
+         }
 
          Console.ReadKey();
       }
