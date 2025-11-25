@@ -21,6 +21,17 @@ namespace ConsoleExperiment
             }
          }
 
+
+         string contents = "";
+         string url = "http://msdn.microsoft.com";
+
+         using (System.Net.WebClient client = new System.Net.WebClient())
+         {
+            contents = client.DownloadString(url);
+         }
+
+         Console.WriteLine(contents);
+
          Console.ReadKey();
       }
    }
