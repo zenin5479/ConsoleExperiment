@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 // Отправка синхронных запросов с помощью HttpClient
 
@@ -28,14 +29,14 @@ namespace ConsoleExperiment
          Console.WriteLine(contents);
 
          // POST запрос реализует не сложнее, но уже предполагает обязательное наличие параметров запроса 
-         string ur = "https://example.com";
-         using (var webClient = new WebClient())
-         {
-            webClient.QueryString.Add("format", "json");
-            // Выполняем запрос по адресу и получаем ответ в виде строки
-            contents = webClient.UploadString(ur, contents);
-            Console.WriteLine(contents);
-         }
+         //string ur = "https://example.com";
+         //using (var webClient = new WebClient())
+         //{
+         //   webClient.QueryString.Add("format", "json");
+         //   // Выполняем запрос по адресу и получаем ответ в виде строки
+         //   contents = webClient.UploadString(ur, contents);
+         //   Console.WriteLine(contents);
+         //}
 
          // Создание WebClient
          using (WebClient client = new WebClient())
@@ -44,7 +45,7 @@ namespace ConsoleExperiment
             client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
 
             // Выполнение GET-запроса и получение ответа в виде строки
-            string response = client.DownloadString("https://api.example.com/data");
+            string response = client.DownloadString("https://example.com");
 
             // Далее можно работать с response, например, десериализовать JSON
          }
@@ -59,7 +60,7 @@ namespace ConsoleExperiment
             client.Headers[HttpRequestHeader.ContentType] = "application/json";
 
             // Отправка POST-запроса с JSON в теле
-            string response = client.UploadString("https://api.example.com/users", "POST", jsonData);
+            string response = client.UploadString("https://example.com", "POST", jsonData);
 
             Console.WriteLine(response);
          }
