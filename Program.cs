@@ -33,7 +33,7 @@ namespace ConsoleExperiment
          {
             webClient.QueryString.Add("format", "json");
             // Выполняем запрос по адресу и получаем ответ в виде строки
-            contents = webClient.DownloadString(ur);
+            contents = webClient.UploadString(ur, contents);
             Console.WriteLine(contents);
          }
 
