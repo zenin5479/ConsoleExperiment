@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Text.Json;
 
 // Отправка синхронных запросов с помощью HttpClient
 
@@ -24,27 +22,26 @@ namespace ConsoleExperiment
          }
 
          string contents;
+         // Адрес ресурса, к которому выполняется запрос
          string url = "https://example.com";
-
+         // Создаём объект WebClient
          using (WebClient client = new WebClient())
          {
+            // Выполняем запрос по адресу и получаем ответ в виде строки
             contents = client.DownloadString(url);
          }
 
          Console.WriteLine(contents);
 
 
-         var httpClient = new HttpClient();
-         using (var request = new HttpRequestMessage(HttpMethod.Post, "https://localhost:12345/Coder"))
-         {
-            var json = JsonSerializer.Serialize(new Coder() { Name = "Bob", Language = "C#" });
-            request.Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var response = httpClient.Send(request);
-            response.EnsureSuccessStatusCode();
-            using var streamReader = new StreamReader(response.Content.ReadAsStream());
-            Console.WriteLine(streamReader.ReadToEnd());
-         }
+         string url = "http://site.com/";
 
+
+         using (var webClient = new WebClient())
+         {
+
+            var response = webClient.DownloadString(url);
+         }
 
          Console.ReadKey();
       }
