@@ -21,6 +21,9 @@ namespace ConsoleExperiment
             }
          }
 
+         // Наиболее простым, способом инициализации GET и POST запросов,
+         // является использование объекта класса WebClient из пространства имён System.Net
+         // Рассмотрим реализацию GET запроса
          string contents;
          // Адрес ресурса, к которому выполняется запрос
          string url = "https://example.com";
