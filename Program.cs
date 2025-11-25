@@ -38,7 +38,7 @@ namespace ConsoleExperiment
 
          Console.WriteLine(contents);
 
-
+         // POST запрос реализует не сложнее, но уже предполагает обязательное наличие параметров запроса 
 
 
          Console.ReadKey();
