@@ -40,24 +40,17 @@ namespace ConsoleExperiment
          //   Console.WriteLine(contents);
          //}
 
-         
-
          using (WebClient client = new WebClient())
          {
-            string url = "https://example.com";
-            string result = client.DownloadString(url);
-            // Process the result
-            Console.WriteLine(result);
+            string response = client.DownloadString("https://example.com");
+            Console.WriteLine(response);
          }
 
-
          using (WebClient client = new WebClient())
          {
-            string url = "https://api.example.com/data";
-            string payload = "key=value";
-            string result = client.UploadString(url, "POST", payload);
-            // Process the result
-            Console.WriteLine(result);
+            string data = "key1=value1&key2=value2";
+            string response = client.UploadString("https://aexample.com/post", "POST", data);
+            Console.WriteLine(response);
          }
 
          Console.ReadKey();
