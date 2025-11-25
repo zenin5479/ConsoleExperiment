@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Text.Json;
 
 // Отправка синхронных запросов с помощью HttpClient
 
@@ -12,7 +10,6 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-
          var request = (HttpWebRequest)WebRequest.Create("https://example.com");
          request.Method = "GET";
          using (var response = (HttpWebResponse)request.GetResponse())
@@ -22,7 +19,11 @@ namespace ConsoleExperiment
             Console.WriteLine(result);
          }
 
+
+
+
+
          Console.ReadKey();
-         }
       }
    }
+}
