@@ -10,7 +10,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         var request = (HttpWebRequest)WebRequest.Create("https://example.com");
+         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com");
          request.Method = "GET";
          using (var response = (HttpWebResponse)request.GetResponse())
          using (var streamReader = new StreamReader(response.GetResponseStream()))
