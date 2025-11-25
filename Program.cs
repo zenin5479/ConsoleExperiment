@@ -24,9 +24,11 @@ namespace ConsoleExperiment
          string contents;
          // Адрес ресурса, к которому выполняется запрос
          string url = "https://example.com";
+         
          // Создаём объект WebClient
          using (WebClient client = new WebClient())
          {
+            client.QueryString.Add("format", "json");
             // Выполняем запрос по адресу и получаем ответ в виде строки
             contents = client.DownloadString(url);
          }
