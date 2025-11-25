@@ -33,16 +33,6 @@ namespace ConsoleExperiment
 
          Console.WriteLine(contents);
 
-
-         string url = "http://site.com/";
-
-
-         using (var webClient = new WebClient())
-         {
-
-            var response = webClient.DownloadString(url);
-         }
-
          Console.ReadKey();
       }
    }
