@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text.Json.Serialization;
 
 // Отправка синхронных запросов с помощью HttpClient
 
@@ -34,6 +35,33 @@ namespace ConsoleExperiment
             // Выполняем запрос по адресу и получаем ответ в виде строки
             contents = webClient.DownloadString(ur);
             Console.WriteLine(contents);
+         }
+
+         // Создание WebClient
+         using (WebClient client = new WebClient())
+         {
+            // Добавление заголовков (опционально)
+            client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+
+            // Выполнение GET-запроса и получение ответа в виде строки
+            string response = client.DownloadString("https://api.example.com/data");
+
+            // Далее можно работать с response, например, десериализовать JSON
+         }
+
+         // Данные для отправки
+         var userData = new { Name = "John", Age = 30 };
+         string jsonData = JsonConvert.SerializeObject(userData);
+
+         using (WebClient client = new WebClient())
+         {
+            // Установка заголовка Content-Type
+            client.Headers[HttpRequestHeader.ContentType] = "application/json";
+
+            // Отправка POST-запроса с JSON в теле
+            string response = client.UploadString("https://api.example.com/users", "POST", jsonData);
+
+            Console.WriteLine(response);
          }
 
          Console.ReadKey();
