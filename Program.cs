@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Text.Json.Serialization;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 // Отправка синхронных запросов с помощью HttpClient
@@ -13,7 +14,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-        // Наиболее простым, способом инициализации GET и POST запросов,
+         // Наиболее простым, способом инициализации GET и POST запросов,
          // является использование объекта класса WebClient из пространства имён System.Net
          // Реализация GET запроса
          //string contents;
@@ -39,22 +40,24 @@ namespace ConsoleExperiment
          //   Console.WriteLine(contents);
          //}
 
+         
 
-         WebClient client = new WebClient();
-         // Example of posting data to a server
-         string postAddress = "https://example.com";
-         // Prepare string data for POST request
-         string stringData = "name=John&age=30";
-         byte[] postData = System.Text.Encoding.ASCII.GetBytes(stringData);
-         try
+         using (WebClient client = new WebClient())
          {
-            byte[] response = client.UploadData(postAddress, "POST", postData);
-            // Log response headers and content
-            Console.WriteLine("Response received: " + System.Text.Encoding.ASCII.GetString(response));
+            string url = "https://example.com";
+            string result = client.DownloadString(url);
+            // Process the result
+            Console.WriteLine(result);
          }
-         catch (Exception ex)
+
+
+         using (WebClient client = new WebClient())
          {
-            Console.WriteLine("Post failed: " + ex.Message);
+            string url = "https://api.example.com/data";
+            string payload = "key=value";
+            string result = client.UploadString(url, "POST", payload);
+            // Process the result
+            Console.WriteLine(result);
          }
 
          Console.ReadKey();
