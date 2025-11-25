@@ -12,16 +12,14 @@ namespace ConsoleExperiment
       {
          HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com");
          request.Method = "GET";
-         using (var response = (HttpWebResponse)request.GetResponse())
-         using (var streamReader = new StreamReader(response.GetResponseStream()))
+         using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
          {
-            var result = streamReader.ReadToEnd();
-            Console.WriteLine(result);
+            using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
+            {
+              string result = streamReader.ReadToEnd();
+               Console.WriteLine(result);
+            }
          }
-
-
-
-
 
          Console.ReadKey();
       }
