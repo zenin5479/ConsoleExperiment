@@ -49,7 +49,7 @@ namespace ConsoleExperiment
          using (WebClient client = new WebClient())
          {
             string data = "key1=value1&key2=value2";
-            string response = client.UploadString("https://aexample.com/post", "POST", data);
+            string response = client.UploadString("https://example.com/post", "POST", data);
             Console.WriteLine(response);
          }
 
