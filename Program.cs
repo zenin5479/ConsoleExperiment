@@ -17,16 +17,18 @@ namespace ConsoleExperiment
          // Наиболее простым, способом инициализации GET и POST запросов,
          // является использование объекта класса WebClient из пространства имён System.Net
          // Реализация GET запроса
-         //string contents;
-         //// Адрес ресурса, к которому выполняется запрос
-         //string url = "https://example.com";
-         //// Создаём объект WebClient
-         //using (WebClient client = new WebClient())
-         //{
-         //   client.QueryString.Add("format", "json");
-         //   // Выполняем запрос по адресу и получаем ответ в виде строки
-         //   contents = client.DownloadString(url);
-         //}
+         string contents;
+         // Адрес ресурса, к которому выполняется запрос
+         string url = "https://example.com";
+         // Создаём объект WebClient
+         using (WebClient client = new WebClient())
+         {
+            // Выполняем запрос по адресу и получаем ответ в виде строки
+            contents = client.DownloadString(url);
+
+         }
+
+         Console.WriteLine(contents);
 
          //Console.WriteLine(contents);
 
@@ -42,14 +44,16 @@ namespace ConsoleExperiment
 
          using (WebClient client = new WebClient())
          {
-            // Добавление заголовков (при необходимости)
-            client.Headers.Add("X-Auth-Token", "LocalTocken");
-            client.Headers.Add("X-User-Id", "LocalID");
-
-            // Выполнение запроса и получение ответа в виде строки
-            string response = client.DownloadString("https://api.local/tables?tableName=myTable");
+            string response = client.DownloadString("https://example.com");
             Console.WriteLine(response);
          }
+
+         //using (WebClient client = new WebClient())
+         //{
+         //   string data = "key1=value1&key2=value2";
+         //   string response = client.UploadString("https://example.com/post", "POST", data);
+         //   Console.WriteLine(response);
+         //}
 
          Console.ReadKey();
       }
