@@ -35,9 +35,7 @@ namespace ConsoleExperiment
             Console.WriteLine(response);
          }
 
-         
-         
-         
+         // POST - запрос
          using (var clients = new WebClient())
          {
             // Данные для отправки
@@ -52,7 +50,6 @@ namespace ConsoleExperiment
             string response = System.Text.Encoding.UTF8.GetString(responseBytes);
             Console.WriteLine("POST Response: " + response);
          }
-
 
          Console.ReadKey();
       }
