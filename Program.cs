@@ -40,7 +40,16 @@ namespace ConsoleExperiment
          //   Console.WriteLine(contents);
          //}
 
-         
+         using (WebClient client = new WebClient())
+         {
+            // Добавление заголовков (при необходимости)
+            client.Headers.Add("X-Auth-Token", "LocalTocken");
+            client.Headers.Add("X-User-Id", "LocalID");
+
+            // Выполнение запроса и получение ответа в виде строки
+            string response = client.DownloadString("https://api.local/tables?tableName=myTable");
+            Console.WriteLine(response);
+         }
 
          Console.ReadKey();
       }
