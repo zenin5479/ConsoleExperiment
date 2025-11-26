@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Net;
 
 // Отправка синхронных запросов с помощью HttpClient
@@ -33,6 +34,22 @@ namespace ConsoleExperiment
             string response = client.DownloadString("https://example.com");
             Console.WriteLine(response);
          }
+
+         using (var clients = new WebClient())
+         {
+            // Данные для отправки
+            var data = new NameValueCollection
+            {
+               { "key1", "value1" },
+               { "key2", "value2" }
+            };
+
+            // Выполняем POST-запрос
+            byte[] responseBytes = clients.UploadValues("https://httpbin.org/post", "POST", data);
+            string response = System.Text.Encoding.UTF8.GetString(responseBytes);
+            Console.WriteLine("POST Response: " + response);
+         }
+
 
          Console.ReadKey();
       }
