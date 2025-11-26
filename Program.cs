@@ -35,6 +35,9 @@ namespace ConsoleExperiment
             Console.WriteLine(response);
          }
 
+         
+         
+         
          using (var clients = new WebClient())
          {
             // Данные для отправки
