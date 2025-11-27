@@ -28,13 +28,6 @@ namespace ConsoleExperiment
 
          Console.WriteLine();
 
-         // Вариант 2
-         using (WebClient client = new WebClient())
-         {
-            string response = client.DownloadString("https://example.com");
-            Console.WriteLine(response);
-         }
-
          // POST - запрос
          using (WebClient clients = new WebClient())
          {
@@ -51,13 +44,13 @@ namespace ConsoleExperiment
             Console.WriteLine("POST Response: " + response);
          }
 
-         WebClient clien = new WebClient();
+         WebClient user = new WebClient();
          string address = "https://vk.com";
          string fileName = "Data.txt";
          try
          {
             Console.WriteLine("Загрузка данных по адресу " + address + " в файл " + fileName);
-            clien.DownloadFile(address, fileName);
+            user.DownloadFile(address, fileName);
          }
          catch (WebException exc)
          {
