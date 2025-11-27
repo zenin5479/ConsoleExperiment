@@ -36,10 +36,10 @@ namespace ConsoleExperiment
          }
 
          // POST - запрос
-         using (var clients = new WebClient())
+         using (WebClient clients = new WebClient())
          {
             // Данные для отправки
-            var data = new NameValueCollection
+            NameValueCollection data = new NameValueCollection
             {
                { "key1", "value1" },
                { "key2", "value2" }
