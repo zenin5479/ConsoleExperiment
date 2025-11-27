@@ -17,12 +17,12 @@ namespace ConsoleExperiment
 
          string contents;
          // Адрес ресурса, к которому выполняется запрос
-         string url = "https://example.com";
+         string website = "https://example.com";
          // Создаём объект WebClient
          using (WebClient client = new WebClient())
          {
             // Выполняем запрос по адресу и получаем ответ в виде строки
-            contents = client.DownloadString(url);
+            contents = client.DownloadString(website);
             Console.WriteLine("GET Response: " + contents);
          }
 
@@ -69,12 +69,12 @@ namespace ConsoleExperiment
          // Получить вебстраницу в строку для последующей ее обработки
          // Cама процедура неэффективная - сначала загружаем страницу в файл, потом читаем текст из этого файла
          // Гораздо удобнее использовать метод OpenRead()
-         Stream str = subject.OpenRead("https://example.com");
+         Stream brook = subject.OpenRead("https://example.com");
          // Содержимое страницы будет загружено в переменную
          // После этого можно использовать класс StreamReader для обработки потока
-         if (str != null)
+         if (brook != null)
          {
-            StreamReader reader = new StreamReader(str);
+            StreamReader reader = new StreamReader(brook);
             string line;
             while ((line = reader.ReadLine()) != null)
             {
