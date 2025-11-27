@@ -25,7 +25,7 @@ namespace ConsoleExperiment
             contents = client.DownloadString(url);
          }
 
-         Console.WriteLine(contents);
+         Console.WriteLine("GET Response: " + contents);
          Console.WriteLine();
 
          // Вариант 2
