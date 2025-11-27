@@ -29,7 +29,7 @@ namespace ConsoleExperiment
          Console.WriteLine();
 
          // POST - запрос
-         using (WebClient clients = new WebClient())
+         using (WebClient customer = new WebClient())
          {
             // Данные для отправки
             NameValueCollection data = new NameValueCollection
@@ -39,7 +39,7 @@ namespace ConsoleExperiment
             };
 
             // Выполняем POST-запрос
-            byte[] responseBytes = clients.UploadValues("https://httpbin.org/post", "POST", data);
+            byte[] responseBytes = customer.UploadValues("https://httpbin.org/post", "POST", data);
             string response = System.Text.Encoding.UTF8.GetString(responseBytes);
             Console.WriteLine("POST Response: " + response);
          }
@@ -61,15 +61,15 @@ namespace ConsoleExperiment
 
          Console.WriteLine("Загрузка...\nПожалуйста, подождите...");
          // Для загрузки файла используется класс WebClient
-         WebClient cli = new WebClient();
+         WebClient subject = new WebClient();
          // Метод DownloadFile() принимает два параметра - первый это путь к файлу,
          // который нужно скачать, а второй - локальное имя файла
-         cli.DownloadFile("https://www.google.ru", "WebClienUploadingFiles.txt");
+         subject.DownloadFile("https://www.google.ru", "WebClienUploadingFiles.txt");
          Console.WriteLine("Загрузка завершена");
          // Получить вебстраницу в строку для последующей ее обработки
          // Cама процедура неэффективная - сначала загружаем страницу в файл, потом читаем текст из этого файла
          // Гораздо удобнее использовать метод OpenRead()
-         Stream str = cli.OpenRead("https://www.google.ru");
+         Stream str = subject.OpenRead("https://www.google.ru");
          // Содержимое страницы будет загружено в переменную
          // После этого можно использовать класс StreamReader для обработки потока
          if (str != null)
