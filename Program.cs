@@ -52,9 +52,9 @@ namespace ConsoleExperiment
             Console.WriteLine("Загрузка данных по адресу " + address + " в файл " + fileName);
             user.DownloadFile(address, fileName);
          }
-         catch (WebException exc)
+         catch (WebException exclusion)
          {
-            Console.WriteLine(exc);
+            Console.WriteLine(exclusion);
          }
 
          Console.WriteLine("Загрузка завершена");
