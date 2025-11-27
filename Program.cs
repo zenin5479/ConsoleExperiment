@@ -84,5 +84,9 @@ namespace ConsoleExperiment
 
          Console.ReadKey();
       }
+
+      // "https://api.binance.com/api/v3/time"
+      // "{\"serverTime\":1764273281968}"
+      // string result;
    }
 }
