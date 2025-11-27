@@ -14,7 +14,6 @@ namespace ConsoleExperiment
          // Наиболее простым, способом инициализации GET и POST запросов,
          // является использование объекта класса WebClient из пространства имён System.Net
          // Реализация GET запроса
-         // Вариант 1
 
          string contents;
          // Адрес ресурса, к которому выполняется запрос
@@ -24,9 +23,9 @@ namespace ConsoleExperiment
          {
             // Выполняем запрос по адресу и получаем ответ в виде строки
             contents = client.DownloadString(url);
+            Console.WriteLine("GET Response: " + contents);
          }
 
-         Console.WriteLine("GET Response: " + contents);
          Console.WriteLine();
 
          // Вариант 2
@@ -67,21 +66,6 @@ namespace ConsoleExperiment
 
          Console.WriteLine("Загрузка завершена");
 
-         using (WebClient user = new WebClient())
-         {
-            // Данные для отправки
-            var data = new NameValueCollection
-            {
-               { "key1", "value1" },
-               { "key2", "value2" }
-            };
-
-            // Выполняем POST-запрос
-            byte[] responseBytes = user.UploadValues("https://httpbin.org/post", "POST", data);
-            string response = System.Text.Encoding.UTF8.GetString(responseBytes);
-            Console.WriteLine("POST Response: " + response);
-         }
-
          Console.WriteLine("Загрузка...\nПожалуйста, подождите...");
          // Для загрузки файла используется класс WebClient
          WebClient cli = new WebClient();
@@ -104,9 +88,6 @@ namespace ConsoleExperiment
                Console.WriteLine(line);
             }
          }
-
-         Console.ReadLine();
-
 
          Console.ReadKey();
       }
