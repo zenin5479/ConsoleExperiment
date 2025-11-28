@@ -17,7 +17,7 @@ namespace ConsoleExperiment
 
          string contents;
          // Адрес ресурса, к которому выполняется запрос
-         string website = "https://example.com";
+         string website = "https://api.binance.com/api/v3/time";
          // Создаём объект WebClient
          using (WebClient client = new WebClient())
          {
