@@ -45,7 +45,7 @@ namespace ConsoleExperiment
          }
 
          WebClient user = new WebClient();
-         string address = "https://api.binance.com/api/v3/time";
+         string address = "https://example.com";
          string fileName = "Data.txt";
          try
          {
@@ -64,12 +64,12 @@ namespace ConsoleExperiment
          WebClient subject = new WebClient();
          // Метод DownloadFile() принимает два параметра - первый это путь к файлу,
          // который нужно скачать, а второй - локальное имя файла
-         subject.DownloadFile("https://api.binance.com/api/v3/time", "WebClienUploadingFiles.txt");
+         subject.DownloadFile("https://example.com", "WebClienUploadingFiles.txt");
          Console.WriteLine("Загрузка завершена");
          // Получить вебстраницу в строку для последующей ее обработки
          // Cама процедура неэффективная - сначала загружаем страницу в файл, потом читаем текст из этого файла
          // Гораздо удобнее использовать метод OpenRead()
-         Stream brook = subject.OpenRead("https://api.binance.com/api/v3/time");
+         Stream brook = subject.OpenRead("https://example.com");
          // Содержимое страницы будет загружено в переменную
          // После этого можно использовать класс StreamReader для обработки потока
          if (brook != null)
