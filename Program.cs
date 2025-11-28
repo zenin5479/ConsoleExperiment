@@ -39,7 +39,7 @@ namespace ConsoleExperiment
             };
 
             // Выполняем POST-запрос
-            byte[] responseBytes = customer.UploadValues("https://httpbin.org/post", "POST", data);
+            byte[] responseBytes = customer.UploadValues("https://api.binance.com/api/v3/time", "POST", data);
             string response = System.Text.Encoding.UTF8.GetString(responseBytes);
             Console.WriteLine("POST Response: " + response);
          }
