@@ -9,9 +9,9 @@ namespace ConsoleExperiment
       {
          Dictionary<string, double> prices = new Dictionary<string, double>
          {
-            {"Apple", 1.2},
-            {"Banana", 0.8},
-            {"Orange", 1.5}
+            {"Apple", 22.2},
+            {"Banana", 12.8},
+            {"Orange", 15.5}
          };
 
          // Способ 1: Использование enumerator
