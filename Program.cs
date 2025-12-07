@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Отправка синхронных запросов с помощью HttpClient
-
 namespace ConsoleExperiment
 {
    internal class Program
