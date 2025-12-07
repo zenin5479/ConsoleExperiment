@@ -15,7 +15,7 @@ namespace ConsoleExperiment
          };
 
          // Способ 1: Использование enumerator
-         Console.WriteLine("Using enumerator:");
+         Console.WriteLine("Использование enumerator:");
          Dictionary<string, double>.Enumerator enumerator = prices.GetEnumerator();
          try
          {
@@ -30,7 +30,7 @@ namespace ConsoleExperiment
          }
 
          // Способ 2: Использование foreach (проще)
-         Console.WriteLine("\nUsing foreach:");
+         Console.WriteLine("\nИспользование foreach:");
          foreach (KeyValuePair<string, double> item in prices)
          {
             Console.WriteLine("{0}: ${1}", item.Key, item.Value);
