@@ -33,7 +33,7 @@ namespace ConsoleExperiment
 
          // Способ 2: Использование foreach (проще)
          Console.WriteLine("\nUsing foreach:");
-         foreach (var item in prices)
+         foreach (KeyValuePair<string, double> item in prices)
          {
             Console.WriteLine("{0}: ${1}", item.Key, item.Value);
          }
