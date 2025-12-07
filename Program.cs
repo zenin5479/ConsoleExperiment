@@ -18,19 +18,17 @@ namespace ConsoleExperiment
 
          // Способ 1: Использование enumerator
          Console.WriteLine("Using enumerator:");
-         using (var enumerator = prices.GetEnumerator())
+         var enumerator = prices.GetEnumerator();
+         try
          {
-            try
+            while (enumerator.MoveNext())
             {
-               while (enumerator.MoveNext())
-               {
-                  Console.WriteLine($"{enumerator.Current.Key}: ${enumerator.Current.Value}");
-               }
+               Console.WriteLine($"{enumerator.Current.Key}: ${enumerator.Current.Value}");
             }
-            finally
-            {
-               enumerator.Dispose();
-            }
+         }
+         finally
+         {
+            enumerator.Dispose();
          }
 
          // Способ 2: Использование foreach (проще)
