@@ -18,12 +18,12 @@ namespace ConsoleExperiment
 
          // Способ 1: Использование enumerator
          Console.WriteLine("Using enumerator:");
-         var enumerator = prices.GetEnumerator();
+         Dictionary<string, double>.Enumerator enumerator = prices.GetEnumerator();
          try
          {
             while (enumerator.MoveNext())
             {
-               Console.WriteLine($"{enumerator.Current.Key}: ${enumerator.Current.Value}");
+               Console.WriteLine("{0}: ${1}", enumerator.Current.Key, enumerator.Current.Value);
             }
          }
          finally
@@ -35,7 +35,7 @@ namespace ConsoleExperiment
          Console.WriteLine("\nUsing foreach:");
          foreach (var item in prices)
          {
-            Console.WriteLine($"{item.Key}: ${item.Value}");
+            Console.WriteLine("{0}: ${1}", item.Key, item.Value);
          }
 
          Console.ReadKey();
