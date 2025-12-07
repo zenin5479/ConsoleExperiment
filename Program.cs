@@ -18,12 +18,12 @@ namespace ConsoleExperiment
 
          // Способ 1: Использование enumerator
          Console.WriteLine("Using enumerator:");
-         Dictionary<string, double>.Enumerator enumerator = prices.GetEnumerator();
+         var enumerator = prices.GetEnumerator();
          try
          {
             while (enumerator.MoveNext())
             {
-               Console.WriteLine("{0}: ${1}", enumerator.Current.Key, enumerator.Current.Value);
+               Console.WriteLine($"{enumerator.Current.Key}: ${enumerator.Current.Value}");
             }
          }
          finally
