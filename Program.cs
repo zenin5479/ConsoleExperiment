@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace ConsoleExperiment
 {
@@ -7,34 +8,21 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         Dictionary<string, double> prices = new Dictionary<string, double>
-         {
-            {"Apple", 22.2},
-            {"Banana", 12.8},
-            {"Orange", 15.5}
-         };
+         WebClient user = new WebClient();
+         string uri = "https://www.mheducation.com";
+         string fname = "data.txt";
 
-         // Способ 1: Использование enumerator
-         Console.WriteLine("Использование enumerator:");
-         Dictionary<string, double>.Enumerator enumerator = prices.GetEnumerator();
          try
          {
-            while (enumerator.MoveNext())
-            {
-               Console.WriteLine("{0}: ${1}", enumerator.Current.Key, enumerator.Current.Value);
-            }
+            Console.WriteLine("Загрузка данных по адресу " +
+                              uri + " в файл " + fname);
+            user.DownloadFile(uri, fname);
          }
-         finally
+         catch (WebException exc)
          {
-            enumerator.Dispose();
+            Console.WriteLine(exc);
          }
-
-         // Способ 2: Использование foreach (проще)
-         Console.WriteLine("\nИспользование foreach:");
-         foreach (KeyValuePair<string, double> item in prices)
-         {
-            Console.WriteLine("{0}: ${1}", item.Key, item.Value);
-         }
+         Console.WriteLine("Загрузка завершена.");
 
          Console.ReadKey();
       }
