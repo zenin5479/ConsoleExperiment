@@ -9,6 +9,7 @@ namespace ConsoleExperiment
       static void Main()
       {
          // Пример доступа к веб-сайту
+         // Доступ к Интернету организуется на основе классов WebRequest и WebResponse
          int ch;
          // Сначала создать объект запроса типа WebRequest по указанному URI
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.mheducation.com");
