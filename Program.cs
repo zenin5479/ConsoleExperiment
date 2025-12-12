@@ -11,9 +11,18 @@ namespace ConsoleExperiment
          ExampleAccessingWebsite();
          ExampleAccessingSite();
          HandlingNetworkException();
+         ApplyingPropertiesUriClass();
+
          UsingWebClientClass();
 
          Console.ReadKey();
+      }
+
+
+      static void ApplyingPropertiesUriClass()
+      {
+
+
       }
 
       // Пример обработки сетевых исключений
