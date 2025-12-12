@@ -23,9 +23,8 @@ namespace ConsoleExperiment
       // Доступ к cookie-наборам
       static void AccessCookieSets()
       {
-         string uri = "https://yandex.ru";
-         Console.WriteLine("Применение: Cookie {0}", uri );
-
+         string uri = "https://ya.ru/";
+         Console.WriteLine("Cookie {0}", uri );
          // Создать объект запроса типа WebRequest по указанному URI
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
          // Получить пустой контейнер
