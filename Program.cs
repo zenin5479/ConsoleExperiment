@@ -23,7 +23,7 @@ namespace ConsoleExperiment
          try
          {
             // Сначала создать объект запроса типа WebRequest по указанному URI
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.McGraw-Hill.com");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
             // Затем отправить сформированный запрос и получить на него ответ
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
             // Получить из ответа поток ввода
