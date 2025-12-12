@@ -33,10 +33,10 @@ namespace ConsoleExperiment
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
          // Отобразить cookie-наборы
          Console.WriteLine("Количество cookie-наборов: " + resp.Cookies.Count);
-         Console.WriteLine("{0,-20}{1}", "Имя", "Значение");
+         Console.WriteLine("{0}\t{1}", "Имя", "Значение");
          for (int i = 0; i < resp.Cookies.Count; i++)
          {
-            Console.WriteLine("{0, -20}{1}", resp.Cookies[i].Name, resp.Cookies[i].Value);
+            Console.WriteLine("{0}\t{1}", resp.Cookies[i].Name, resp.Cookies[i].Value);
          }
 
          // Закрыть ответный поток
@@ -54,11 +54,11 @@ namespace ConsoleExperiment
          // Получить список имен
          string[] names = resp.Headers.AllKeys;
          // Отобразить пары "имя-значение" из заголовка
-         Console.WriteLine("{0,-20}{1}", "Имя", "Значение");
+         Console.WriteLine("{0}\t{1}", "Имя", "Значение");
          for (int i = 0; i < names.Length; i++)
          {
             string n = names[i];
-            Console.Write("{0,-20}", n);
+            Console.Write("{0}", n);
             for (int j = 0; j < resp.Headers.GetValues(n).Length; j++)
             {
                string v = resp.Headers.GetValues(n)[j];
