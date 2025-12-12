@@ -13,6 +13,7 @@ namespace ConsoleExperiment
          //HandlingNetworkException();
          //ApplyingPropertiesUriClass();
          AccessHeaderInformation();
+         AccessCookieSets();
 
          //UsingWebClientClass();
 
@@ -22,11 +23,11 @@ namespace ConsoleExperiment
       // Доступ к cookie-наборам
       static void AccessCookieSets()
       {
-
+         string uri = "https://example.com";
          Console.WriteLine("Применение: CookieDemo <uri>");
 
          // Создать объект запроса типа WebRequest по указанному URI
-         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
+         HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
          // Получить пустой контейнер
          req.CookieContainer = new CookieContainer();
          // Отправить сформированный запрос и получить на него ответ
