@@ -18,6 +18,14 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      // Доступ к заголовку с информацией
+      static void AccessHeaderInformation()
+      {
+
+
+
+      }
+
       // Пример применения свойств из класса Uri
       static void ApplyingPropertiesUriClass()
       {
