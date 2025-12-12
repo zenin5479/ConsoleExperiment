@@ -8,26 +8,11 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         // Применение класса WebClient
-         //WebClient user = new WebClient();
-         //string uri = "https://example.com";
-         //string fname = "data.txt";
-         //try
-         //{
-         //   Console.WriteLine("Загрузка данных по адресу " + uri + " в файл " + fname);
-         //   user.DownloadFile(uri, fname);
-         //}
-         //catch (WebException exc)
-         //{
-         //   Console.WriteLine(exc);
-         //}
-
-         //Console.WriteLine("Загрузка завершена");
-
+         ExampleAccessingWebsite();
          Console.ReadKey();
       }
 
-      void ExampleAccessingWebsite()
+      static void ExampleAccessingWebsite()
       {
          // Пример доступа к веб-сайту
          // Доступ на основе классов WebRequest и WebResponse
