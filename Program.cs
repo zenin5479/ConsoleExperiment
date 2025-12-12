@@ -23,7 +23,6 @@ namespace ConsoleExperiment
 
          // Сначала создать объект запроса типа WebRequest по указанному URI.
          WebRequest req = WebRequest.Create("https://example.com");
-
          // Затем отправить сформированный запрос и получить на него ответ.
          WebResponse resp = req.GetResponse();
          // Получить из ответа поток ввода
