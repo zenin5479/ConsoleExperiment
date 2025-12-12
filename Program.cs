@@ -23,8 +23,8 @@ namespace ConsoleExperiment
       // Доступ к cookie-наборам
       static void AccessCookieSets()
       {
-         string uri = "https://example.com";
-         Console.WriteLine("Применение: CookieDemo <uri>");
+         string uri = "https://yandex.ru";
+         Console.WriteLine("Применение: Cookie {0}", uri );
 
          // Создать объект запроса типа WebRequest по указанному URI
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
@@ -55,7 +55,7 @@ namespace ConsoleExperiment
          // Получить список имен
          string[] names = resp.Headers.AllKeys;
          // Отобразить пары "имя-значение" из заголовка
-         Console.WriteLine("{0,-20}{1}\n", "Имя", "Значение");
+         Console.WriteLine("{0,-20}{1}", "Имя", "Значение");
          for (int i = 0; i < names.Length; i++)
          {
             string n = names[i];
