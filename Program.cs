@@ -63,10 +63,8 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-
       void ExampleAccessingWebsite()
       {
-
          // Пример доступа к веб-сайту
          // Доступ к Интернету организуется на основе классов WebRequest и WebResponse
          int ch = 0;
