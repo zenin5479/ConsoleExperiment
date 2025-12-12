@@ -20,7 +20,6 @@ namespace ConsoleExperiment
       static void ExampleAccessingSite()
       {
          int ch = 0;
-
          // Сначала создать объект запроса типа WebRequest по указанному URI.
          WebRequest req = WebRequest.Create("https://example.com");
          // Затем отправить сформированный запрос и получить на него ответ.
