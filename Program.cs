@@ -19,6 +19,7 @@ namespace ConsoleExperiment
       }
 
 
+      // Пример применения свойств из класса Uri.
       static void ApplyingPropertiesUriClass()
       {
 
