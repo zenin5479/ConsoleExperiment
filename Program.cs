@@ -8,8 +8,8 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         
-         
+
+         UsingWebClientClass();
          ExampleAccessingWebsite();
          Console.ReadKey();
       }
@@ -53,7 +53,7 @@ namespace ConsoleExperiment
          resp.Close();
       }
 
-      void UsingWebClientClass()
+      static void UsingWebClientClass()
       {
          // Применение класса WebClient
          WebClient user = new WebClient();
