@@ -11,13 +11,10 @@ namespace ConsoleExperiment
          ExampleAccessingWebsite();
          ExampleAccessingSite();
          HandlingNetworkException();
-
-
          UsingWebClientClass();
 
          Console.ReadKey();
       }
-
 
       // Пример обработки сетевых исключений
       static void HandlingNetworkException()
@@ -25,17 +22,13 @@ namespace ConsoleExperiment
          int ch;
          try
          {
-            // Сначала создать объект запроса типа WebRequest по указанному URI.
+            // Сначала создать объект запроса типа WebRequest по указанному URI
             HttpWebRequest req = (HttpWebRequest)
                WebRequest.Create("http://www.McGraw-Hill.com");
-
-            // Затем отправить сформированный запрос и получить на него ответ.
-            HttpWebResponse resp = (HttpWebResponse)
-               req.GetResponse();
-
-            // Получить из ответа поток ввода.
+            // Затем отправить сформированный запрос и получить на него ответ
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            // Получить из ответа поток ввода
             Stream istrm = resp.GetResponseStream();
-
             /* А теперь прочитать и отобразить гипертекстовое содержимое,
                полученное по указанному URI. Это содержимое выводился на экран
                отдельными порциями по 400 символов. После каждой такой порции
@@ -48,7 +41,7 @@ namespace ConsoleExperiment
                Console.Write((char)ch);
                if ((i % 400) == 0)
                {
-                  Console.Write("\nНажмите клавишу <Enter>.");
+                  Console.Write("\nНажмите клавишу <Enter>");
                   Console.ReadLine();
                }
             }
@@ -80,8 +73,7 @@ namespace ConsoleExperiment
          }
          catch (System.Security.SecurityException exc)
          {
-            Console.WriteLine("Исключение в связи с нарушением безопасности: " +
-                              exc.Message);
+            Console.WriteLine("Исключение в связи с нарушением безопасности: " + exc.Message);
          }
          catch (InvalidOperationException exc)
          {
