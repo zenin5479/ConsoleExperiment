@@ -10,6 +10,8 @@ namespace ConsoleExperiment
       {
          ExampleAccessingWebsite();
          ExampleAccessingSite();
+         HandlingNetworkException();
+
 
          UsingWebClientClass();
 
@@ -18,7 +20,7 @@ namespace ConsoleExperiment
 
 
       // Пример обработки сетевых исключений
-      void HandlingNetworkException()
+      static void HandlingNetworkException()
       {
          int ch;
          try
