@@ -86,9 +86,9 @@ namespace ConsoleExperiment
       static void ExampleAccessingSite()
       {
          int ch = 0;
-         // Сначала создать объект запроса типа WebRequest по указанному URI.
+         // Сначала создать объект запроса типа WebRequest по указанному URI
          WebRequest req = WebRequest.Create("https://example.com");
-         // Затем отправить сформированный запрос и получить на него ответ.
+         // Затем отправить сформированный запрос и получить на него ответ
          WebResponse resp = req.GetResponse();
          // Получить из ответа поток ввода
          Stream istrm = resp.GetResponseStream();
@@ -119,7 +119,6 @@ namespace ConsoleExperiment
          // При этом закрывается также поток ввода istrm
          resp.Close();
       }
-
 
       // Пример доступа к сайту на основе классов WebRequest и WebResponse
       static void ExampleAccessingWebsite()
