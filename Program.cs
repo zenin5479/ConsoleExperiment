@@ -16,6 +16,16 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+
+      // Пример обработки сетевых исключений
+      void HandlingNetworkException()
+      {
+
+
+      }
+
+
+
       // Пример доступа к сайту на основе классов WebRequest и WebResponse
       static void ExampleAccessingSite()
       {
