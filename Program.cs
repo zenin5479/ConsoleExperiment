@@ -19,7 +19,7 @@ namespace ConsoleExperiment
       // Пример обработки сетевых исключений
       static void HandlingNetworkException()
       {
-         int ch;
+         int ch = 0;
          try
          {
             // Сначала создать объект запроса типа WebRequest по указанному URI
@@ -33,10 +33,14 @@ namespace ConsoleExperiment
             // После каждой такой порции следует нажать клавишу <ENTER>, чтобы вывести на экран следующую порцию из 400 символов
             for (int i = 1; ; i++)
             {
-               ch = istrm.ReadByte();
-               if (ch == -1) break;
+               if (istrm != null) ch = istrm.ReadByte();
+               if (ch == -1)
+               {
+                  break;
+               }
+
                Console.Write((char)ch);
-               if ((i % 400) == 0)
+               if (i % 400 == 0)
                {
                   Console.Write("\nНажмите клавишу <Enter>");
                   Console.ReadLine();
