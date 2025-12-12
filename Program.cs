@@ -20,10 +20,12 @@ namespace ConsoleExperiment
       static void ExampleAccessingSite()
       {
          int ch = 0;
-         // Сначала создается объект запроса типа WebRequest по указанному URI
-         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
-         // Затем отправить сформированный запрос и получить на него ответ
-         HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+
+         // Сначала создать объект запроса типа WebRequest по указанному URI.
+         WebRequest req = WebRequest.Create("https://example.com");
+
+         // Затем отправить сформированный запрос и получить на него ответ.
+         WebResponse resp = req.GetResponse();
          // Получить из ответа поток ввода
          Stream istrm = resp.GetResponseStream();
          // А теперь прочитать и отобразить гипертекстовое содержимое, полученное по указанному URI
