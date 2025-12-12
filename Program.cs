@@ -14,7 +14,7 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      // Пример доступа к веб-сайту на основе классов WebRequest и WebResponse
+      // Пример доступа к сайту на основе классов WebRequest и WebResponse
       static void ExampleAccessingWebsite()
       {
          int ch = 0;
