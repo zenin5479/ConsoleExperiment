@@ -23,6 +23,30 @@ namespace ConsoleExperiment
       static void AccessCookieSets()
       {
 
+         Console.WriteLine("Применение: CookieDemo <uri>");
+
+         // Создать объект запроса типа WebRequest по указанному URI.
+         HttpWebRequest req = (HttpWebRequest)
+            WebRequest.Create("https://example.com");
+
+         // Получить пустой контейнер.
+         req.CookieContainer = new CookieContainer();
+
+         // Отправить сформированный запрос и получить на него ответ.
+         HttpWebResponse resp = (HttpWebResponse)
+            req.GetResponse();
+
+         // Отобразить cookie-наборы.
+         Console.WriteLine("Количество cookie-наборов: " +
+                           resp.Cookies.Count);
+         Console.WriteLine("{0,-20}{1}", "Имя", "Значение");
+         for (int i = 0; i < resp.Cookies.Count; i++)
+            Console.WriteLine("{0, -20}{1}",
+               resp.Cookies[i].Name,
+               resp.Cookies[i].Value);
+
+         // Закрыть ответный поток.
+         resp.Close();
       }
 
 
