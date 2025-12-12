@@ -18,12 +18,16 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-
-      // Пример применения свойств из класса Uri.
+      // Пример применения свойств из класса Uri
       static void ApplyingPropertiesUriClass()
       {
-
-
+         Uri sample = new Uri("https://example.com/somefile.txt?SomeQuery");
+         Console.WriteLine("Хост: " + sample.Host);
+         Console.WriteLine("Порт: " + sample.Port);
+         Console.WriteLine("Протокол: " + sample.Scheme);
+         Console.WriteLine("Локальный путь: " + sample.LocalPath);
+         Console.WriteLine("Запрос: " + sample.Query);
+         Console.WriteLine("Путь и запрос: " + sample.PathAndQuery);
       }
 
       // Пример обработки сетевых исключений
