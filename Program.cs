@@ -8,11 +8,11 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-
-
          ExampleAccessingWebsite();
          ExampleAccessingSite();
+
          UsingWebClientClass();
+
          Console.ReadKey();
       }
 
