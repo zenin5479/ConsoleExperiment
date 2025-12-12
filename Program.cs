@@ -43,7 +43,6 @@ namespace ConsoleExperiment
          resp.Close();
       }
 
-
       // Доступ к заголовку с информацией
       static void AccessHeaderInformation()
       {
