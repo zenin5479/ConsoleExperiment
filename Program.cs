@@ -10,7 +10,7 @@ namespace ConsoleExperiment
       {
          // Применение класса WebClient
          //WebClient user = new WebClient();
-         //string uri = "https://www.mheducation.com";
+         //string uri = "https://example.com";
          //string fname = "data.txt";
          //try
          //{
@@ -33,7 +33,7 @@ namespace ConsoleExperiment
          // Доступ на основе классов WebRequest и WebResponse
          int ch = 0;
          // Сначала создается объект запроса типа WebRequest по указанному URI
-         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://www.mheducation.com");
+         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
          // Затем отправить сформированный запрос и получить на него ответ
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
          // Получить из ответа поток ввода
@@ -64,6 +64,28 @@ namespace ConsoleExperiment
          // Закрыть ответный поток
          // При этом закрывается также поток ввода istrm
          resp.Close();
+      }
+
+      void UsingWebClientClass()
+      {
+
+
+         // Применение класса WebClient
+         //WebClient user = new WebClient();
+         //string uri = "https://example.com";
+         //string fname = "data.txt";
+         //try
+         //{
+         //   Console.WriteLine("Загрузка данных по адресу " + uri + " в файл " + fname);
+         //   user.DownloadFile(uri, fname);
+         //}
+         //catch (WebException exc)
+         //{
+         //   Console.WriteLine(exc);
+         //}
+
+         //Console.WriteLine("Загрузка завершена");
+
       }
    }
 }
