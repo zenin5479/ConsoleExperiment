@@ -28,20 +28,20 @@ namespace ConsoleExperiment
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
          // Получить список имен
          string[] names = resp.Headers.AllKeys;
-         // Отобразить пары "имя-значение" из заголовка.
+         // Отобразить пары "имя-значение" из заголовка
          Console.WriteLine("{0,-20}(1}\n", "Имя", "Значение");
-         for (int index = 0; index < names.Length; index++)
+         for (int i = 0; i < names.Length; i++)
          {
-            string n = names[index];
+            string n = names[i];
             Console.Write("{0,-20}", n);
-            for (int i = 0; i < resp.Headers.GetValues(n).Length; i++)
+            for (int j = 0; j < resp.Headers.GetValues(n).Length; j++)
             {
-               string v = resp.Headers.GetValues(n)[i];
+               string v = resp.Headers.GetValues(n)[j];
                Console.WriteLine(v);
             }
          }
 
-         // Закрыть ответный поток.
+         // Закрыть ответный поток
          resp.Close();
 
 
