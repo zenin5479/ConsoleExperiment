@@ -8,13 +8,13 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         ExampleAccessingWebsite();
-         ExampleAccessingSite();
-         HandlingNetworkException();
-         ApplyingPropertiesUriClass();
+         //ExampleAccessingWebsite();
+         //ExampleAccessingSite();
+         //HandlingNetworkException();
+         //ApplyingPropertiesUriClass();
          AccessHeaderInformation();
 
-         UsingWebClientClass();
+         //UsingWebClientClass();
 
          Console.ReadKey();
       }
@@ -23,7 +23,7 @@ namespace ConsoleExperiment
       static void AccessHeaderInformation()
       {
          // Создать объект запроса типа WebRequest по указанному URI
-         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.McGraw-Hill.com");
+         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
          // Отправить сформированный запрос и получить на него ответ
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
          // Получить список имен
