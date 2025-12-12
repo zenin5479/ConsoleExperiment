@@ -53,8 +53,7 @@ namespace ConsoleExperiment
          }
          catch (WebException exc)
          {
-            Console.WriteLine("Сетевая ошибка: " + exc.Message +
-                              "\nКод состояния: " + exc.Status);
+            Console.WriteLine("Сетевая ошибка: " + exc.Message + "\nКод состояния: " + exc.Status);
          }
          catch (ProtocolViolationException exc)
          {
