@@ -9,15 +9,14 @@ namespace ConsoleExperiment
       static void Main()
       {
          UsingWebClientClass();
-         ExampleAccessingWebsite();         
-         
+         ExampleAccessingWebsite();
+
          Console.ReadKey();
       }
 
+      // Пример доступа к веб-сайту на основе классов WebRequest и WebResponse
       static void ExampleAccessingWebsite()
       {
-         // Пример доступа к веб-сайту
-         // Доступ на основе классов WebRequest и WebResponse
          int ch = 0;
          // Сначала создается объект запроса типа WebRequest по указанному URI
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://example.com");
