@@ -12,6 +12,7 @@ namespace ConsoleExperiment
          ExampleAccessingSite();
          HandlingNetworkException();
          ApplyingPropertiesUriClass();
+         AccessHeaderInformation();
 
          UsingWebClientClass();
 
