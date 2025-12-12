@@ -30,11 +30,15 @@ namespace ConsoleExperiment
          string[] names = resp.Headers.AllKeys;
          // Отобразить пары "имя-значение" из заголовка.
          Console.WriteLine("{0,-20}(1}\n", "Имя", "Значение");
-         foreach (string n in names)
+         for (int index = 0; index < names.Length; index++)
          {
+            string n = names[index];
             Console.Write("{0,-20}", n);
-            foreach (string v in resp.Headers.GetValues(n))
+            for (int i = 0; i < resp.Headers.GetValues(n).Length; i++)
+            {
+               string v = resp.Headers.GetValues(n)[i];
                Console.WriteLine(v);
+            }
          }
 
          // Закрыть ответный поток.
