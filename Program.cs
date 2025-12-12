@@ -8,9 +8,9 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-
          UsingWebClientClass();
-         ExampleAccessingWebsite();
+         ExampleAccessingWebsite();         
+         
          Console.ReadKey();
       }
 
