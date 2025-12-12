@@ -19,6 +19,13 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      // Доступ к cookie-наборам
+      static void AccessCookieSets()
+      {
+
+      }
+
+
       // Доступ к заголовку с информацией
       static void AccessHeaderInformation()
       {
