@@ -22,17 +22,12 @@ namespace ConsoleExperiment
       // Доступ к заголовку с информацией
       static void AccessHeaderInformation()
       {
-         // Создать объект запроса типа WebRequest по указанному URI.
-         HttpWebRequest req = (HttpWebRequest)
-            WebRequest.Create("http://www.McGraw-Hill.com");
-
-         // Отправить сформированный запрос и получить на него ответ.
-         HttpWebResponse resp = (HttpWebResponse)
-            req.GetResponse();
-
-         // Получить список имен.
+         // Создать объект запроса типа WebRequest по указанному URI
+         HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://www.McGraw-Hill.com");
+         // Отправить сформированный запрос и получить на него ответ
+         HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+         // Получить список имен
          string[] names = resp.Headers.AllKeys;
-
          // Отобразить пары "имя-значение" из заголовка.
          Console.WriteLine("{0,-20}(1}\n", "Имя", "Значение");
          foreach (string n in names)
