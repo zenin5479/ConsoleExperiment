@@ -12,7 +12,7 @@ namespace ConsoleExperiment
          //ExampleAccessingSite();
          //HandlingNetworkException();
          //ApplyingPropertiesUriClass();
-         AccessHeaderInformation();
+         //AccessHeaderInformation();
          AccessCookieSets();
 
          //UsingWebClientClass();
