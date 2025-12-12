@@ -52,6 +52,7 @@ namespace ConsoleExperiment
          resp.Close();
       }
 
+      // Применение класса WebClient
       static void UsingWebClientClass()
       {
          // Применение класса WebClient
