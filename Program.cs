@@ -29,7 +29,7 @@ namespace ConsoleExperiment
          // Получить список имен
          string[] names = resp.Headers.AllKeys;
          // Отобразить пары "имя-значение" из заголовка
-         Console.WriteLine("{0,-20}(1}\n", "Имя", "Значение");
+         Console.WriteLine("{0,-20}{1}\n", "Имя", "Значение");
          for (int i = 0; i < names.Length; i++)
          {
             string n = names[i];
@@ -43,8 +43,6 @@ namespace ConsoleExperiment
 
          // Закрыть ответный поток
          resp.Close();
-
-
       }
 
       // Пример применения свойств из класса Uri
@@ -203,7 +201,6 @@ namespace ConsoleExperiment
       // Применение класса WebClient
       static void UsingWebClientClass()
       {
-         // Применение класса WebClient
          WebClient user = new WebClient();
          string uri = "https://example.com";
          string fname = "data.txt";
