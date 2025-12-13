@@ -29,21 +29,16 @@ namespace ConsoleExperiment
          string link;
          string str;
          string answer;
-
-         int curloc; // содержит текущее положение в ответе
-         
-        
-
-         string uristr = uri; // содержит текущий URI
-
+         // Текущее положение в ответе
+         int curloc;
+         // Текущий URI
+         string uristr = uri;
          HttpWebResponse resp = null;
-
          try
          {
             do
             {
                Console.WriteLine("Переход по ссылке " + uristr);
-
                // Создать объект запроса типа WebRequest по указанному URI.
                HttpWebRequest req = (HttpWebRequest)
                WebRequest.Create(uristr);
