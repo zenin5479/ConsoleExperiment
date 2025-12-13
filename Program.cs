@@ -56,7 +56,7 @@ namespace ConsoleExperiment
                do
                {
                   // Найти следующий URI для перехода по ссылке
-                  link = FindLink(str, ref curloc);
+                  link = FindLink(str, curloc);
                   if (link != null)
                   {
                      Console.WriteLine("Найдена ссылка: " + link);
@@ -122,13 +122,13 @@ namespace ConsoleExperiment
       }
 
       // Найти ссылку в строке содержимого
-      static string FindLink(string htmlstr, ref int startloc)
+      static string FindLink(string htmlstr, int startloc)
       {
          int i;
          int start, end;
          string uri = null;
 
-         i = htmlstr.IndexOf("href=\"http", startloc, StringComparison.OrdinalIgnoreCase);
+         i = htmlstr.IndexOf("href=\"https", startloc, StringComparison.OrdinalIgnoreCase);
          if (i != -1)
          {
             start = htmlstr.IndexOf('"', i) + 1;
