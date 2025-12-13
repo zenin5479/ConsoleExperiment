@@ -25,74 +25,91 @@ namespace ConsoleExperiment
       // MiniCrawler: скелетный вариант поискового робота
       static void MiniCrawler()
       {
-         string[] uri = { "http://McGraw-Hill.com" };
-         Console.WriteLine("MiniCrawler {0}", uri);
+         string[] arg = { "http://McGraw-Hill.com" };
          string link;
          string str;
          string answer;
-         // Текущее положение в ответе
-         int curloc;
-         // Текущий URI
-         string uristr = uri[0];
+
+         int curloc; // содержит текущее положение в ответе
+         if (arg.Length != 1)
+         {
+            Console.WriteLine("Применение: MiniCrawler <uri>");
+            return;
+         }
+
+         string uristr = arg[0]; // содержит текущий URI
+
          HttpWebResponse resp = null;
+
          try
          {
             do
             {
                Console.WriteLine("Переход по ссылке " + uristr);
-               // Создать объект запроса типа WebRequest по указанному URI
-               HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uristr);
-               // Запретить дальнейшее использование этого URI
-               uristr = null;
-               // Отправить сформированный запрос и получить на него ответ
+
+               // Создать объект запроса типа WebRequest по указанному URI.
+               HttpWebRequest req = (HttpWebRequest)
+               WebRequest.Create(uristr);
+               uristr = null; // запретить дальнейшее использование этого URI
+
+               // Отправить сформированный запрос и получить на него ответ.
                resp = (HttpWebResponse)req.GetResponse();
-               // Получить поток ввода из принятого ответа
+
+               // Получить поток ввода из принятого ответа.
                Stream istrm = resp.GetResponseStream();
-               // Заключить поток ввода в оболочку класса StreamReader
+
+               // Заключить поток ввода в оболочку класса StreamReader.
                StreamReader rdr = new StreamReader(istrm);
-               // Прочитать всю страницу
+
+               // Прочитать всю страницу.
                str = rdr.ReadToEnd();
+
                curloc = 0;
+
                do
                {
-                  // Найти следующий URI для перехода по ссылке
-                  link = FindLink(str, curloc);
+                  // Найти следующий URI для перехода по ссылке.
+                  link = FindLink(str, ref curloc);
                   if (link != null)
                   {
                      Console.WriteLine("Найдена ссылка: " + link);
+
                      Console.Write("Перейти по ссылке, Искать дальше, Выйти?");
                      answer = Console.ReadLine();
-                     if (string.Equals(answer, "п", StringComparison.OrdinalIgnoreCase))
+
+                     if (string.Equals(answer, "П",
+                         StringComparison.OrdinalIgnoreCase))
                      {
                         uristr = string.Copy(link);
                         break;
                      }
-                     if (string.Equals(answer, "в", StringComparison.OrdinalIgnoreCase))
+
+                     if (string.Equals(answer, "B",
+                            StringComparison.OrdinalIgnoreCase))
                      {
                         break;
                      }
 
-                     if (string.Equals(answer, "и", StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "И",
+                            StringComparison.OrdinalIgnoreCase))
                      {
-                        Console.WriteLine("Поиск следующей ссылки");
+                        Console.WriteLine("Поиск следующей ссылки.");
                      }
                      else
                      {
-                        Console.WriteLine("Больше ссылок не найдено");
+                        Console.WriteLine("Больше ссылок не найдено.");
                         break;
                      }
                   }
                } while (link.Length > 0);
-               // Закрыть ответный поток
-               if (resp != null)
-               {
-                  resp.Close();
-               }
+               // Закрыть ответный поток.
+               if (resp != null) resp.Close();
             } while (uristr != null);
          }
          catch (WebException exc)
          {
-            Console.WriteLine("Сетевая ошибка: " + exc.Message + "\nКод состояния: " + exc.Status);
+            Console.WriteLine("Сетевая ошибка: " + exc.Message +
+                            "\nКод состояния: " + exc.Status);
          }
          catch (ProtocolViolationException exc)
          {
@@ -112,23 +129,20 @@ namespace ConsoleExperiment
          }
          finally
          {
-            if (resp != null)
-            {
-               resp.Close();
-            }
+            if (resp != null) resp.Close();
          }
-
-         Console.WriteLine("Завершение программы MiniCrawler");
+         Console.WriteLine("Завершение программы MiniCrawler.");
       }
 
       // Найти ссылку в строке содержимого
-      static string FindLink(string htmlstr, int startloc)
+      static string FindLink(string htmlstr, ref int startloc)
       {
          int i;
          int start, end;
          string uri = null;
 
-         i = htmlstr.IndexOf("href=\"https", startloc, StringComparison.OrdinalIgnoreCase);
+         i = htmlstr.IndexOf("href=\"http", startloc,
+            StringComparison.OrdinalIgnoreCase);
          if (i != -1)
          {
             start = htmlstr.IndexOf('"', i) + 1;
