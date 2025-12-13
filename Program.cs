@@ -25,7 +25,7 @@ namespace ConsoleExperiment
       // MiniCrawler: скелетный вариант поискового робота
       static void MiniCrawler()
       {
-         string uri = "https://example.com";
+         string uri = "https://ya.ru/";
          Console.WriteLine("MiniCrawler {0}", uri);
          string link;
          string str;
@@ -82,7 +82,7 @@ namespace ConsoleExperiment
                         break;
                      }
                   }
-               } while (link.Length > 0); // Ссылка не указывает на экземпляр объекта
+               } while (link.Length > 0);
                // Закрыть ответный поток
                if (resp != null)
                {
