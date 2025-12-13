@@ -28,7 +28,6 @@ namespace ConsoleExperiment
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
          Console.WriteLine("Последняя модификация: " + resp.LastModified);
          resp.Close();
-
       }
 
       // Доступ к cookie-наборам
