@@ -22,7 +22,7 @@ namespace ConsoleExperiment
       }
 
 
-      // Свойство LastModified - время обновления содержимого се­тевого ресурса в последний раз.
+      // Свойство LastModified - время обновления содержимого се­тевого ресурса в последний раз
       static void DateLastWebsiteUpdate()
       {
          string uri = "https://example.com";
