@@ -13,7 +13,7 @@ namespace ConsoleExperiment
          //HandlingNetworkException();
          //ApplyingPropertiesUriClass();
          //AccessHeaderInformation();
-         AccessCookieSets();
+         //AccessCookieSets();
          DateLastWebsiteUpdate();
 
          //UsingWebClientClass();
