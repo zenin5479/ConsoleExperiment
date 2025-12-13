@@ -22,7 +22,8 @@ namespace ConsoleExperiment
 
       void DateLastWebsiteUpdate()
       {
-         Console.WriteLine("Применение: LastModifiedDemo <uri>");
+         string uri = "https://ya.ru/";
+         Console.WriteLine("LastModified {0}", uri);
 
 
          HttpWebRequest req = (HttpWebRequest)
