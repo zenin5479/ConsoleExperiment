@@ -14,7 +14,7 @@ namespace ConsoleExperiment
          //ApplyingPropertiesUriClass();
          //AccessHeaderInformation();
          AccessCookieSets();
-         DateLastWebsiteUpdate()
+         DateLastWebsiteUpdate();
 
          //UsingWebClientClass();
 
