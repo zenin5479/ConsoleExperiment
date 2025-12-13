@@ -37,7 +37,6 @@ namespace ConsoleExperiment
          }
          string uristr = arg[0]; // содержит текущий URI
          HttpWebResponse resp = null;
-
          try
          {
             do
@@ -85,7 +84,10 @@ namespace ConsoleExperiment
                   }
                } while (link.Length > 0);
                // Закрыть ответный поток.
-               if (resp != null) resp.Close();
+               if (resp != null)
+               {
+                  resp.Close();
+               }
             } while (uristr != null);
          }
          catch (WebException exc)
