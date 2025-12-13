@@ -21,7 +21,6 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-
       // Свойство LastModified - время обновления содержимого се­тевого ресурса в последний раз
       static void DateLastWebsiteUpdate()
       {
