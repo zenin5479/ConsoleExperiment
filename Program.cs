@@ -23,7 +23,7 @@ namespace ConsoleExperiment
 
       static void DateLastWebsiteUpdate()
       {
-         string uri = "https://ya.ru/";
+         string uri = "https://example.com";
          Console.WriteLine("LastModified {0}", uri);
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
