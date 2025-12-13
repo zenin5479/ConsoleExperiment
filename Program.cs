@@ -34,7 +34,7 @@ namespace ConsoleExperiment
          
         
 
-         string uristr = args[0]; // содержит текущий URI
+         string uristr = uri; // содержит текущий URI
 
          HttpWebResponse resp = null;
 
@@ -80,13 +80,15 @@ namespace ConsoleExperiment
                         uristr = string.Copy(link);
                         break;
                      }
-                     else if (string.Equals(answer, "B",
-                                 StringComparison.OrdinalIgnoreCase))
+
+                     if (string.Equals(answer, "B",
+                            StringComparison.OrdinalIgnoreCase))
                      {
                         break;
                      }
-                     else if (string.Equals(answer, "И",
-                         StringComparison.OrdinalIgnoreCase))
+
+                     if (string.Equals(answer, "И",
+                            StringComparison.OrdinalIgnoreCase))
                      {
                         Console.WriteLine("Поиск следующей ссылки.");
                      }
@@ -97,7 +99,7 @@ namespace ConsoleExperiment
                      }
                   }
                } while (link.Length > 0);
-               // Закрыть ответный поток.
+               // Закрыть ответный поток
                if (resp != null) resp.Close();
             } while (uristr != null);
          }
