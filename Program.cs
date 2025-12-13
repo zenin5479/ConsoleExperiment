@@ -21,6 +21,12 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+
+      // ### Применение свойства LastModified
+      // Иногда требуется знать, когда именно сетевой ресурс был обновлен в последний раз.
+      // Это нетрудно сделать, пользуясь сетевыми средствами класса HttpWebResponse,
+      // среди которых определено свойство LastModified, приведенное ниже.
+      // С помощью свойства LastModified получается время обновления содержимого се­тевого ресурса в последний раз.
       static void DateLastWebsiteUpdate()
       {
          string uri = "https://example.com";
