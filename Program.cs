@@ -25,7 +25,7 @@ namespace ConsoleExperiment
       // MiniCrawler: скелетный вариант поискового робота
       static void MiniCrawler()
       {
-         string uri = "https://ya.ru/";
+         string[] uri = { "http://McGraw-Hill.com" };
          Console.WriteLine("MiniCrawler {0}", uri);
          string link;
          string str;
@@ -33,7 +33,7 @@ namespace ConsoleExperiment
          // Текущее положение в ответе
          int curloc;
          // Текущий URI
-         string uristr = uri;
+         string uristr = uri[0];
          HttpWebResponse resp = null;
          try
          {
