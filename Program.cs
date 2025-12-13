@@ -21,7 +21,7 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      void DateLastWebsiteUpdate()
+      static void DateLastWebsiteUpdate()
       {
          string uri = "https://ya.ru/";
          Console.WriteLine("LastModified {0}", uri);
