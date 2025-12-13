@@ -22,6 +22,12 @@ namespace ConsoleExperiment
       }
 
       // MiniCrawler: скелетный вариант поискового робота
+      void MiniCrawler()
+      {
+
+
+
+      }
 
       // Свойство LastModified - время обновления содержимого се­тевого ресурса в последний раз
       static void DateLastWebsiteUpdate()
