@@ -14,7 +14,8 @@ namespace ConsoleExperiment
          //ApplyingPropertiesUriClass();
          //AccessHeaderInformation();
          //AccessCookieSets();
-         DateLastWebsiteUpdate();
+         //DateLastWebsiteUpdate();
+         MiniCrawler();
 
          //UsingWebClientClass();
 
@@ -22,7 +23,7 @@ namespace ConsoleExperiment
       }
 
       // MiniCrawler: скелетный вариант поискового робота
-      void MiniCrawler()
+      static void MiniCrawler()
       {
          string uri = "https://example.com";
          Console.WriteLine("MiniCrawler {0}", uri);
