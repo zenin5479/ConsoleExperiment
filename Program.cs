@@ -25,7 +25,6 @@ namespace ConsoleExperiment
          string uri = "https://ya.ru/";
          Console.WriteLine("LastModified {0}", uri);
          HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
-
          HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
 
          Console.WriteLine("Последняя модификация: " + resp.LastModified);
