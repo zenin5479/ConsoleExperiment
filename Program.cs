@@ -29,16 +29,13 @@ namespace ConsoleExperiment
          string link;
          string str;
          string answer;
-
          int curloc; // содержит текущее положение в ответе
          if (arg.Length != 1)
          {
             Console.WriteLine("Применение: MiniCrawler <uri>");
             return;
          }
-
          string uristr = arg[0]; // содержит текущий URI
-
          HttpWebResponse resp = null;
 
          try
@@ -46,26 +43,18 @@ namespace ConsoleExperiment
             do
             {
                Console.WriteLine("Переход по ссылке " + uristr);
-
                // Создать объект запроса типа WebRequest по указанному URI.
-               HttpWebRequest req = (HttpWebRequest)
-               WebRequest.Create(uristr);
+               HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uristr);
                uristr = null; // запретить дальнейшее использование этого URI
-
                // Отправить сформированный запрос и получить на него ответ.
                resp = (HttpWebResponse)req.GetResponse();
-
                // Получить поток ввода из принятого ответа.
                Stream istrm = resp.GetResponseStream();
-
                // Заключить поток ввода в оболочку класса StreamReader.
                StreamReader rdr = new StreamReader(istrm);
-
                // Прочитать всю страницу.
                str = rdr.ReadToEnd();
-
                curloc = 0;
-
                do
                {
                   // Найти следующий URI для перехода по ссылке.
@@ -73,25 +62,18 @@ namespace ConsoleExperiment
                   if (link != null)
                   {
                      Console.WriteLine("Найдена ссылка: " + link);
-
                      Console.Write("Перейти по ссылке, Искать дальше, Выйти?");
                      answer = Console.ReadLine();
-
-                     if (string.Equals(answer, "П",
-                         StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "П", StringComparison.OrdinalIgnoreCase))
                      {
                         uristr = string.Copy(link);
                         break;
                      }
-
-                     if (string.Equals(answer, "B",
-                            StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "B", StringComparison.OrdinalIgnoreCase))
                      {
                         break;
                      }
-
-                     if (string.Equals(answer, "И",
-                            StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "И", StringComparison.OrdinalIgnoreCase))
                      {
                         Console.WriteLine("Поиск следующей ссылки.");
                      }
@@ -108,8 +90,7 @@ namespace ConsoleExperiment
          }
          catch (WebException exc)
          {
-            Console.WriteLine("Сетевая ошибка: " + exc.Message +
-                            "\nКод состояния: " + exc.Status);
+            Console.WriteLine("Сетевая ошибка: " + exc.Message + "\nКод состояния: " + exc.Status);
          }
          catch (ProtocolViolationException exc)
          {
@@ -140,9 +121,7 @@ namespace ConsoleExperiment
          int i;
          int start, end;
          string uri = null;
-
-         i = htmlstr.IndexOf("href=\"http", startloc,
-            StringComparison.OrdinalIgnoreCase);
+         i = htmlstr.IndexOf("href=\"http", startloc, StringComparison.OrdinalIgnoreCase);
          if (i != -1)
          {
             start = htmlstr.IndexOf('"', i) + 1;
