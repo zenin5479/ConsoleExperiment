@@ -62,17 +62,17 @@ namespace ConsoleExperiment
                      Console.WriteLine("Найдена ссылка: " + link);
                      Console.Write("Перейти по ссылке, Искать дальше, Выйти?");
                      answer = Console.ReadLine();
-                     if (string.Equals(answer, "П", StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "п", StringComparison.OrdinalIgnoreCase))
                      {
                         uristr = string.Copy(link);
                         break;
                      }
-                     if (string.Equals(answer, "B", StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "в", StringComparison.OrdinalIgnoreCase))
                      {
                         break;
                      }
 
-                     if (string.Equals(answer, "И", StringComparison.OrdinalIgnoreCase))
+                     if (string.Equals(answer, "и", StringComparison.OrdinalIgnoreCase))
                      {
                         Console.WriteLine("Поиск следующей ссылки");
                      }
@@ -82,7 +82,7 @@ namespace ConsoleExperiment
                         break;
                      }
                   }
-               } while (link.Length > 0);
+               } while (link.Length > 0); // Ссылка не указывает на экземпляр объекта
                // Закрыть ответный поток
                if (resp != null)
                {
