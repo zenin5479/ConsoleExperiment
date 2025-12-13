@@ -20,6 +20,25 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      void DateLastWebsiteUpdate()
+      {
+
+         
+            Console.WriteLine("Применение: LastModifiedDemo <uri>");
+         
+
+         HttpWebRequest req = (HttpWebRequest)
+            WebRequest.Create(args[0]);
+
+         HttpWebResponse resp = (HttpWebResponse)
+            req.GetResponse();
+
+         Console.WriteLine("Последняя модификация: " + resp.LastModified);
+
+         resp.Close();
+
+      }
+
       // Доступ к cookie-наборам
       static void AccessCookieSets()
       {
