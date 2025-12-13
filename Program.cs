@@ -22,9 +22,7 @@ namespace ConsoleExperiment
       }
 
 
-      // Свойство LastModified
-      // Иногда требуется знать, когда именно сетевой ресурс был обновлен в последний раз.
-      // С помощью свойства LastModified получается время обновления содержимого се­тевого ресурса в последний раз.
+      // Свойство LastModified - время обновления содержимого се­тевого ресурса в последний раз.
       static void DateLastWebsiteUpdate()
       {
          string uri = "https://example.com";
