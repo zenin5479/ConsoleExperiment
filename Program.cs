@@ -42,7 +42,7 @@ namespace ConsoleExperiment
                // Создать объект запроса типа WebRequest по указанному URI
                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uristr);
                // Запретить дальнейшее использование этого URI
-               uristr = null; 
+               uristr = null;
                // Отправить сформированный запрос и получить на него ответ
                resp = (HttpWebResponse)req.GetResponse();
                // Получить поток ввода из принятого ответа
@@ -117,12 +117,11 @@ namespace ConsoleExperiment
             }
          }
 
-         Console.WriteLine("Завершение программы MiniCrawler.");
+         Console.WriteLine("Завершение программы MiniCrawler");
       }
 
       // Найти ссылку в строке содержимого
-      static string FindLink(string htmlstr,
-         ref int startloc)
+      static string FindLink(string htmlstr, ref int startloc)
       {
          int i;
          int start, end;
