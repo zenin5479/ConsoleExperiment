@@ -25,7 +25,7 @@ namespace ConsoleExperiment
       // MiniCrawler: скелетный вариант поискового робота
       static void MiniCrawler()
       {
-         string[] arg = { "http://McGraw-Hill.com" };
+         string[] arg = { "https://www.mheducation.com" };
          string link;
          string str;
          string answer;
