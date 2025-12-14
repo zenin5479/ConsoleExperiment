@@ -116,7 +116,10 @@ namespace ConsoleExperiment
          }
          finally
          {
-            if (resp != null) resp.Close();
+            if (resp != null)
+            {
+               resp.Close();
+            }
          }
          Console.WriteLine("Завершение программы MiniCrawler");
       }
