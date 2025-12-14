@@ -45,7 +45,7 @@ namespace ConsoleExperiment
             do
             {
                Console.WriteLine("Переход по ссылке " + uristr);
-               // Создать объект запроса типа WebRequest по указанному URI.
+               // Создать объект запроса типа WebRequest по указанному URI
                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uristr);
                uristr = null; // запретить дальнейшее использование этого URI
                // Отправить сформированный запрос и получить на него ответ.
