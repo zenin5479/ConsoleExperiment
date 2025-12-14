@@ -33,7 +33,7 @@ namespace ConsoleExperiment
          int curloc;
          if (arg.Length != 1)
          {
-            Console.WriteLine("Применение: MiniCrawler {0}", arg[0]);
+            Console.WriteLine("MiniCrawler: {0}", arg[0]);
             return;
          }
 
