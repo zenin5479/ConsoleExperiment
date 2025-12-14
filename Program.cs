@@ -135,6 +135,7 @@ namespace ConsoleExperiment
             uri = htmlstr.Substring(start, end - start);
             startloc = end;
          }
+
          return uri;
       }
 
