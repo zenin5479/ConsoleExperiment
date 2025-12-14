@@ -82,7 +82,7 @@ namespace ConsoleExperiment
                      }
                      else
                      {
-                        Console.WriteLine("Больше ссылок не найдено.");
+                        Console.WriteLine("Больше ссылок не найдено");
                         break;
                      }
                   }
