@@ -37,7 +37,7 @@ namespace ConsoleExperiment
             return;
          }
 
-         // содержит текущий URI
+         // Содержит текущий URI
          string uristr = arg[0];
          HttpWebResponse resp = null;
          try
