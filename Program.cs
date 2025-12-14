@@ -22,7 +22,7 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      // MiniCrawler: скелетный вариант поискового робота
+      // MiniCrawler - скелетный вариант поискового робота
       static void MiniCrawler()
       {
          string[] arg = { "https://www.mheducation.com" };
