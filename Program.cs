@@ -78,7 +78,7 @@ namespace ConsoleExperiment
                      }
                      if (string.Equals(answer, "И", StringComparison.OrdinalIgnoreCase))
                      {
-                        Console.WriteLine("Поиск следующей ссылки.");
+                        Console.WriteLine("Поиск следующей ссылки");
                      }
                      else
                      {
