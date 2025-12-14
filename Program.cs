@@ -29,7 +29,8 @@ namespace ConsoleExperiment
          string link;
          string str;
          string answer;
-         int curloc; // содержит текущее положение в ответе
+         // содержит текущее положение в ответе
+         int curloc;
          if (arg.Length != 1)
          {
             Console.WriteLine("Применение: MiniCrawler <uri>");
