@@ -48,14 +48,14 @@ namespace ConsoleExperiment
                // Создать объект запроса типа WebRequest по указанному URI
                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uristr);
                // Запретить дальнейшее использование этого URI
-               uristr = null; 
-               // Отправить сформированный запрос и получить на него ответ.
+               uristr = null;
+               // Отправить сформированный запрос и получить на него ответ
                resp = (HttpWebResponse)req.GetResponse();
-               // Получить поток ввода из принятого ответа.
+               // Получить поток ввода из принятого ответа
                Stream istrm = resp.GetResponseStream();
-               // Заключить поток ввода в оболочку класса StreamReader.
+               // Заключить поток ввода в оболочку класса StreamReader
                StreamReader rdr = new StreamReader(istrm);
-               // Прочитать всю страницу.
+               // Прочитать всю страницу
                str = rdr.ReadToEnd();
                curloc = 0;
                do
