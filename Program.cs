@@ -87,7 +87,7 @@ namespace ConsoleExperiment
                      }
                   }
                } while (link.Length > 0);
-               // Закрыть ответный поток.
+               // Закрыть ответный поток
                if (resp != null)
                {
                   resp.Close();
@@ -118,7 +118,7 @@ namespace ConsoleExperiment
          {
             if (resp != null) resp.Close();
          }
-         Console.WriteLine("Завершение программы MiniCrawler.");
+         Console.WriteLine("Завершение программы MiniCrawler");
       }
 
       // Найти ссылку в строке содержимого
