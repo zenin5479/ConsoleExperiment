@@ -60,12 +60,12 @@ namespace ConsoleExperiment
                curloc = 0;
                do
                {
-                  // Найти следующий URI для перехода по ссылке.
+                  // Найти следующий URI для перехода по ссылке
                   link = FindLink(str, ref curloc);
                   if (link != null)
                   {
                      Console.WriteLine("Найдена ссылка: " + link);
-                     Console.Write("Перейти по ссылке, Искать дальше, Выйти?");
+                     Console.Write("Перейти по ссылке, Искать дальше, Выйти? ");
                      answer = Console.ReadLine();
                      if (string.Equals(answer, "П", StringComparison.OrdinalIgnoreCase))
                      {
