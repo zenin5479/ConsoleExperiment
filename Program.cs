@@ -8,17 +8,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         //ExampleAccessingWebsite();
-         //ExampleAccessingSite();
-         //HandlingNetworkException();
-         //ApplyingPropertiesUriClass();
-         //AccessHeaderInformation();
-         //AccessCookieSets();
-         //DateLastWebsiteUpdate();
-         //MiniCrawler();
-
-         //UsingWebClientClass();
-
+        
          Console.ReadKey();
       }
 
