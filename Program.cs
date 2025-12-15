@@ -15,7 +15,7 @@ namespace ConsoleExperiment
          //AccessHeaderInformation();
          //AccessCookieSets();
          //DateLastWebsiteUpdate();
-         MiniCrawler();
+         //MiniCrawler();
 
          //UsingWebClientClass();
 
