@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Net;
 
 namespace ConsoleExperiment
 {
@@ -8,9 +6,8 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-        
+
          Console.ReadKey();
       }
-
    }
 }
