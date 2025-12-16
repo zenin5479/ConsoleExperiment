@@ -9,6 +9,13 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
+         CreategSynchronousServer();
+
+         Console.ReadKey();
+      }
+
+      static void CreategSynchronousServer()
+      {
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
          server.Prefixes.Add("http://127.0.0.1:8888/connection/");
@@ -43,8 +50,6 @@ namespace ConsoleExperiment
 
          // Останавливаем сервер
          server.Stop();
-
-         Console.ReadKey();
       }
    }
 }
