@@ -33,11 +33,13 @@ namespace ConsoleExperiment
          Console.WriteLine($"Запрошен адрес: {request.Url}");
          Console.WriteLine("Заголовки запроса:");
          int i = 0;
-         while ()
+         while (i < request.Headers.Keys.Count)
          {
-
+           
+            
+            i++;
          }
-         for (i < request.Headers.Keys.Count; i++)
+         for ( )
          {
             string item = request.Headers.Keys[i];
             Console.WriteLine($"{item}:{request.Headers[item]}");
