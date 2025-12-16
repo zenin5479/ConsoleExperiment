@@ -32,7 +32,12 @@ namespace ConsoleExperiment
          Console.WriteLine(request.RawUrl);
          Console.WriteLine($"Запрошен адрес: {request.Url}");
          Console.WriteLine("Заголовки запроса:");
-         for (int i = 0; i < request.Headers.Keys.Count; i++)
+         int i = 0;
+         while ()
+         {
+
+         }
+         for (i < request.Headers.Keys.Count; i++)
          {
             string item = request.Headers.Keys[i];
             Console.WriteLine($"{item}:{request.Headers[item]}");
