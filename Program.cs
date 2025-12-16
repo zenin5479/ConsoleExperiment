@@ -35,14 +35,13 @@ namespace ConsoleExperiment
          int i = 0;
          while (i < request.Headers.Keys.Count)
          {
-           
-            
+            string item = request.Headers.Keys[i];
+            Console.WriteLine($"{item}:{request.Headers[item]}");
             i++;
          }
          for ( )
          {
-            string item = request.Headers.Keys[i];
-            Console.WriteLine($"{item}:{request.Headers[item]}");
+
          }
 
          // Получаем объект для установки ответа
