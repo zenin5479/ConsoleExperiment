@@ -9,6 +9,8 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
+
+
          CreategSynchronousServer();
 
          Console.ReadKey();
@@ -45,13 +47,15 @@ namespace ConsoleExperiment
          byte[] buffer = Encoding.UTF8.GetBytes("Hello METANIT");
          // Получаем поток ответа и пишем в него ответ
          response.ContentLength64 = buffer.Length;
-         using Stream output = response.OutputStream;
-         // Отправляем данные
-         output.Write(buffer);
-         output.Flush();
+         using (Stream output = response.OutputStream)
+         {
+            // Отправляем данные
+            output.Write(buffer);
+            output.Flush();
 
-         // Останавливаем сервер
-         server.Stop();
+            // Останавливаем сервер
+            server.Stop();
+         }
       }
    }
 }
