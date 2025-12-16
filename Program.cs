@@ -39,10 +39,6 @@ namespace ConsoleExperiment
             Console.WriteLine($"{item}:{request.Headers[item]}");
             i++;
          }
-         for ( )
-         {
-
-         }
 
          // Получаем объект для установки ответа
          HttpListenerResponse response = context.Response;
