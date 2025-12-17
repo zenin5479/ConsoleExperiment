@@ -1,21 +1,157 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace ConsoleExperiment
 {
    internal class Program
    {
+      static List<User> users = new List<User>();
+
       static void Main()
       {
+         using (HttpListener listener = new HttpListener())
+         {
+            listener.Prefixes.Add("http://localhost:8080/");
+            listener.Start();
+            Console.WriteLine("Сервер запущен на http://localhost:8080/");
 
-         BuildSynchronousServer();
+            while (true)
+            {
+               HttpListenerContext context = listener.GetContext();
+               ProcessRequest(context);
+            }
+         }
+
+         //BuildSynchronousServer();
          //CreategSynchronousServer();
 
          Console.ReadKey();
       }
 
+      static void ProcessRequest(HttpListenerContext context)
+      {
+         try
+         {
+            var request = context.Request;
+            var response = context.Response;
+
+            response.ContentType = "application/json";
+            string result = "";
+
+            switch (request.HttpMethod)
+            {
+               case "GET":
+                  result = HandleGet(request);
+                  break;
+               case "POST":
+                  result = HandlePost(request);
+                  break;
+               case "PUT":
+                  result = HandlePut(request);
+                  break;
+               case "DELETE":
+                  result = HandleDelete(request);
+                  break;
+               default:
+                  result = JsonConvert.SerializeObject(new { error = "Метод не поддерживается" });
+                  response.StatusCode = 405;
+                  break;
+            }
+
+            byte[] buffer = Encoding.UTF8.GetBytes(result);
+            response.ContentLength64 = buffer.Length;
+            using (Stream output = response.OutputStream)
+            {
+               output.Write(buffer, 0, buffer.Length);
+            }
+         }
+         catch (Exception ex)
+         {
+            Console.WriteLine($"Ошибка: {ex.Message}");
+         }
+      }
+
+      static string HandleGet(HttpListenerRequest request)
+      {
+         string id = request.QueryString["id"];
+
+         if (string.IsNullOrEmpty(id))
+         {
+            return JsonConvert.SerializeObject(users);
+         }
+         else
+         {
+            var user = users.Find(u => u.Id == int.Parse(id));
+            return user != null
+            ? JsonConvert.SerializeObject(user)
+                : JsonConvert.SerializeObject(new { error = "Пользователь не найден" });
+         }
+      }
+
+      static string HandlePost(HttpListenerRequest request)
+      {
+         string body = ReadRequestBody(request);
+         var newUser = JsonConvert.DeserializeObject<User>(body);
+         newUser.Id = users.Count + 1;
+         users.Add(newUser);
+
+         return JsonConvert.SerializeObject(new
+         {
+            message = "Пользователь создан",
+            user = newUser
+         });
+      }
+
+      static string HandlePut(HttpListenerRequest request)
+      {
+         string body = ReadRequestBody(request);
+         var updatedUser = JsonConvert.DeserializeObject<User>(body);
+         var existingUser = users.Find(u => u.Id == updatedUser.Id);
+
+         if (existingUser == null)
+         {
+            return JsonConvert.SerializeObject(new { error = "Пользователь не найден" });
+         }
+
+         existingUser.Name = updatedUser.Name;
+         existingUser.Email = updatedUser.Email;
+
+         return JsonConvert.SerializeObject(new
+         {
+            message = "Пользователь обновлен",
+            user = existingUser
+         });
+      }
+
+      static string HandleDelete(HttpListenerRequest request)
+      {
+         string id = request.QueryString["id"];
+         if (string.IsNullOrEmpty(id))
+         {
+            return JsonConvert.SerializeObject(new { error = "Не указан ID" });
+         }
+
+         var user = users.Find(u => u.Id == int.Parse(id));
+         if (user == null)
+         {
+            return JsonConvert.SerializeObject(new { error = "Пользователь не найден" });
+         }
+
+         users.Remove(user);
+         return JsonConvert.SerializeObject(new { message = "Пользователь удален" });
+      }
+
+      static string ReadRequestBody(HttpListenerRequest request)
+      {
+         using (StreamReader reader = new StreamReader(request.InputStream, request.ContentEncoding))
+         {
+            return reader.ReadToEnd();
+         }
+      }
       static void BuildSynchronousServer()
       {
          // Создаём экземпляр HttpListener
@@ -125,5 +261,12 @@ namespace ConsoleExperiment
             server.Stop();
          }
       }
+   }
+
+   public class User
+   {
+      public int Id { get; set; }
+      public string Name { get; set; }
+      public string Email { get; set; }
    }
 }
