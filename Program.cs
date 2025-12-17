@@ -77,6 +77,11 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      static void buildSynchronousServer()
+      {
+
+      }
+
       static void CreategSynchronousServer()
       {
          HttpListener server = new HttpListener();
