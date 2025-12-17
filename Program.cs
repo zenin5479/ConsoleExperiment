@@ -9,6 +9,15 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
+
+         BuildSynchronousServer();
+         //CreategSynchronousServer();
+
+         Console.ReadKey();
+      }
+
+      static void BuildSynchronousServer()
+      {
          // Создаём экземпляр HttpListener
          HttpListener listener = new HttpListener();
 
@@ -72,13 +81,6 @@ namespace ConsoleExperiment
             Console.WriteLine("Сервер остановлен.");
          }
 
-         //CreategSynchronousServer();
-
-         Console.ReadKey();
-      }
-
-      static void buildSynchronousServer()
-      {
 
       }
 
