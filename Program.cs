@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using Newtonsoft.Json;
 
 namespace ConsoleExperiment
 {
@@ -11,7 +9,6 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-
          BuildSynchronousServer();
          //CreategSynchronousServer();
 
@@ -90,7 +87,7 @@ namespace ConsoleExperiment
          // Установка адресов прослушки
          server.Prefixes.Add("http://127.0.0.1:8888/connection/");
          // Начинаем прослушивать входящие подключения
-         server.Start(); 
+         server.Start();
          Console.WriteLine("Сервер запущен. Ожидание подключений...");
          // Получаем контекст
          HttpListenerContext context = server.GetContext();
