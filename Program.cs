@@ -121,8 +121,10 @@ namespace ConsoleExperiment
             output.Write(buffer);
             output.Flush();
 
-            // Останавливаем сервер
+            // Останавливаем прослушивание и освобождаем ресурсы
             server.Stop();
+            server.Close();
+            Console.WriteLine("Сервер остановлен");
          }
       }
    }
