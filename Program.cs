@@ -11,18 +11,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         WebServer server = new WebServer();
-
-         // Запускаем сервер в отдельном потоке, чтобы можно было остановить по нажатию
-         var serverThread = new System.Threading.Thread(server.Start);
-         serverThread.Start();
-
-         Console.WriteLine("Нажмите Enter для остановки сервера...");
-         Console.ReadLine();
-
-         server.Stop();
-         serverThread.Join();
-
+         
          //BuildSynchronousServer();
          //CreategSynchronousServer();
 
