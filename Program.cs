@@ -19,7 +19,6 @@ namespace ConsoleExperiment
       {
          // Создаём экземпляр HttpListener
          HttpListener listener = new HttpListener();
-
          // Добавляем префиксы (адреса, на которых сервер будет слушать запросы)
          // Можно указать несколько префиксов
          listener.Prefixes.Add("http://localhost:8080/");
@@ -87,7 +86,6 @@ namespace ConsoleExperiment
          HttpListenerContext context = server.GetContext();
          // Получаем данные запроса
          HttpListenerRequest request = context.Request;
-
          Console.WriteLine($"адрес приложения: {request.LocalEndPoint}");
          Console.WriteLine($"адрес клиента: {request.RemoteEndPoint}");
          Console.WriteLine(request.RawUrl);
@@ -111,7 +109,6 @@ namespace ConsoleExperiment
             // Отправляем данные
             output.Write(buffer);
             output.Flush();
-
             // Останавливаем прослушивание и освобождаем ресурсы
             server.Stop();
             server.Close();
