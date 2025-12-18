@@ -127,7 +127,7 @@ namespace ConsoleExperiment
       }
    }
 
-// Точка входа
+   // Точка входа
    class Program
    {
       static void Main()
