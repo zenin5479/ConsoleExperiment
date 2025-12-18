@@ -30,13 +30,11 @@ namespace ConsoleExperiment
             // Запускаем прослушивание
             listener.Start();
             Console.WriteLine("Сервер запущен. Ожидание запросов...");
-
             // Бесконечный цикл обработки запросов
             while (true)
             {
                // Блокирующий вызов: ждёт прихода запроса
                HttpListenerContext context = listener.GetContext();
-
                // Получаем запрос и ответ
                HttpListenerRequest request = context.Request;
                HttpListenerResponse response = context.Response;
