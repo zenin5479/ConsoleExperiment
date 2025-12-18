@@ -48,7 +48,6 @@ namespace ConsoleExperiment
                response.ContentLength64 = buffer.Length;
                response.ContentType = "text/html; charset=UTF-8";
                response.StatusCode = (int)HttpStatusCode.OK;
-
                // Отправляем ответ клиенту
                using (Stream output = response.OutputStream)
                {
@@ -72,7 +71,7 @@ namespace ConsoleExperiment
             // Останавливаем прослушивание и освобождаем ресурсы
             listener.Stop();
             listener.Close();
-            Console.WriteLine("Сервер остановлен.");
+            Console.WriteLine("Сервер остановлен");
          }
       }
 
