@@ -38,15 +38,12 @@ namespace ConsoleExperiment
                // Получаем запрос и ответ
                HttpListenerRequest request = context.Request;
                HttpListenerResponse response = context.Response;
-
                // Логируем запрос
                Console.WriteLine($"Получен запрос: {request.HttpMethod} {request.Url}");
-
                // Формируем ответ
                string responseString = "<html><body><h1>Привет от синхронного сервера!</h1>" +
                                        $"<p>Время: {DateTime.Now}</p></body></html>";
                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
-
                // Настраиваем ответ
                response.ContentLength64 = buffer.Length;
                response.ContentType = "text/html; charset=UTF-8";
