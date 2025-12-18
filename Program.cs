@@ -11,8 +11,8 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         
-         //BuildSynchronousServer();
+
+         BuildSynchronousServer();
          //CreategSynchronousServer();
 
          Console.ReadKey();
@@ -58,7 +58,7 @@ namespace ConsoleExperiment
                response.StatusCode = (int)HttpStatusCode.OK;
 
                // Отправляем ответ клиенту
-               using (var output = response.OutputStream)
+               using (Stream output = response.OutputStream)
                {
                   output.Write(buffer, 0, buffer.Length);
                }
