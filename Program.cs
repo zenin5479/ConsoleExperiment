@@ -134,7 +134,6 @@ namespace ConsoleExperiment
       {
          int port = 8080;
          HttpServer server = new HttpServer(port);
-
          Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
          Console.CancelKeyPress += (sender, e) =>
          {
