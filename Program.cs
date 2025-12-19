@@ -45,7 +45,7 @@ namespace ConsoleExperiment
       public void Stop()
       {
          _listener.Stop();
-         Console.WriteLine("Сервер остановлен.");
+         Console.WriteLine("Сервер остановлен");
       }
 
       private void ProcessRequest(HttpListenerContext context)
@@ -74,7 +74,7 @@ namespace ConsoleExperiment
                break;
             default:
                statusCode = 405; // Method Not Allowed
-               responseString = "Метод не поддерживается.";
+               responseString = "Метод не поддерживается";
                break;
          }
 
