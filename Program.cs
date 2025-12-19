@@ -70,7 +70,7 @@ namespace ConsoleExperiment
                break;
             default:
                // Метод, который не разрешен
-               statusCode = 405; 
+               statusCode = 405;
                responseString = "Метод не поддерживается";
                break;
          }
@@ -94,7 +94,9 @@ namespace ConsoleExperiment
       private string HandlePost(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
+         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
+         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
