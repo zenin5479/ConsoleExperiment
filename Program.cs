@@ -54,7 +54,6 @@ namespace ConsoleExperiment
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
          string responseString;
          int statusCode = 200;
-
          switch (request.HttpMethod)
          {
             case "GET":
@@ -70,7 +69,8 @@ namespace ConsoleExperiment
                responseString = HandleDelete(request);
                break;
             default:
-               statusCode = 405; // Method Not Allowed
+               // Method Not Allowed
+               statusCode = 405; 
                responseString = "Метод не поддерживается";
                break;
          }
