@@ -109,7 +109,9 @@ namespace ConsoleExperiment
       private string HandlePut(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
+         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
+         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
