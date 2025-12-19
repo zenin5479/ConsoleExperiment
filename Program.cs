@@ -69,7 +69,7 @@ namespace ConsoleExperiment
                responseString = HandleDelete(request);
                break;
             default:
-               // Method Not Allowed
+               // Метод, который не разрешен
                statusCode = 405; 
                responseString = "Метод не поддерживается";
                break;
