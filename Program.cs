@@ -52,7 +52,7 @@ namespace ConsoleExperiment
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
-         string responseString = string.Empty;
+         string responseString;
          int statusCode = 200;
 
          switch (request.HttpMethod)
