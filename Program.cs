@@ -80,7 +80,6 @@ namespace ConsoleExperiment
          response.ContentLength64 = buffer.Length;
          response.ContentType = "application/json; charset=utf-8";
          response.StatusCode = statusCode;
-
          using (Stream output = response.OutputStream)
          {
             output.Write(buffer, 0, buffer.Length);
