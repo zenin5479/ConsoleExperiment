@@ -20,7 +20,7 @@ namespace ConsoleExperiment
       public void Start()
       {
          _listener.Start();
-         Console.WriteLine($"Сервер запущен на порту {_port}. Ожидание запросов...");
+         Console.WriteLine($"Сервер запущен, порт: {_port}. Ожидание запросов...");
 
          while (_listener.IsListening)
          {
@@ -52,7 +52,6 @@ namespace ConsoleExperiment
       {
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
-
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
 
          string responseString;
@@ -99,7 +98,9 @@ namespace ConsoleExperiment
       private string HandlePost(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
+         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
+         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
@@ -112,7 +113,9 @@ namespace ConsoleExperiment
       private string HandlePut(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
+         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
+         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
@@ -135,7 +138,6 @@ namespace ConsoleExperiment
       {
          int port = 8080;
          HttpServer server = new HttpServer(port);
-
          Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
          Console.CancelKeyPress += (sender, e) =>
          {
