@@ -21,7 +21,6 @@ namespace ConsoleExperiment
       {
          _listener.Start();
          Console.WriteLine($"Сервер запущен на порту {_port}. Ожидание запросов...");
-
          while (_listener.IsListening)
          {
             try
@@ -52,9 +51,7 @@ namespace ConsoleExperiment
       {
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
-
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
-
          string responseString = string.Empty;
          int statusCode = 200;
 
