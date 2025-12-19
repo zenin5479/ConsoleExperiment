@@ -53,10 +53,8 @@ namespace ConsoleExperiment
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
-
          string responseString;
          int statusCode = 200;
-
          switch (request.HttpMethod)
          {
             case "GET":
@@ -83,7 +81,6 @@ namespace ConsoleExperiment
          response.ContentLength64 = buffer.Length;
          response.ContentType = "application/json; charset=utf-8";
          response.StatusCode = statusCode;
-
          using (Stream output = response.OutputStream)
          {
             output.Write(buffer, 0, buffer.Length);
