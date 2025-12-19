@@ -21,6 +21,7 @@ namespace ConsoleExperiment
       {
          _listener.Start();
          Console.WriteLine($"Сервер запущен на порту {_port}. Ожидание запросов...");
+
          while (_listener.IsListening)
          {
             try
@@ -44,16 +45,19 @@ namespace ConsoleExperiment
       public void Stop()
       {
          _listener.Stop();
-         Console.WriteLine("Сервер остановлен");
+         Console.WriteLine("Сервер остановлен.");
       }
 
       private void ProcessRequest(HttpListenerContext context)
       {
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
+
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
-         string responseString;
+
+         string responseString = string.Empty;
          int statusCode = 200;
+
          switch (request.HttpMethod)
          {
             case "GET":
@@ -69,9 +73,8 @@ namespace ConsoleExperiment
                responseString = HandleDelete(request);
                break;
             default:
-               // Метод, который не разрешен
-               statusCode = 405;
-               responseString = "Метод не поддерживается";
+               statusCode = 405; // Method Not Allowed
+               responseString = "Метод не поддерживается.";
                break;
          }
 
@@ -80,6 +83,7 @@ namespace ConsoleExperiment
          response.ContentLength64 = buffer.Length;
          response.ContentType = "application/json; charset=utf-8";
          response.StatusCode = statusCode;
+
          using (Stream output = response.OutputStream)
          {
             output.Write(buffer, 0, buffer.Length);
@@ -94,9 +98,7 @@ namespace ConsoleExperiment
       private string HandlePost(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
-         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
-         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
@@ -109,9 +111,7 @@ namespace ConsoleExperiment
       private string HandlePut(HttpListenerRequest request)
       {
          if (!request.HasEntityBody)
-         {
             return "{\"error\": \"Нет данных в теле запроса\"}";
-         }
 
          using (Stream body = request.InputStream)
          using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
@@ -134,6 +134,7 @@ namespace ConsoleExperiment
       {
          int port = 8080;
          HttpServer server = new HttpServer(port);
+
          Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
          Console.CancelKeyPress += (sender, e) =>
          {
