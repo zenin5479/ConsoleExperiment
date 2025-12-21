@@ -9,20 +9,9 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         int port = 8080;
-         HttpServer server = new HttpServer(port);
-         Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
-         Console.CancelKeyPress += (sender, e) =>
-         {
-            e.Cancel = true;
-            server.Stop();
-            Environment.Exit(0);
-         };
-
-         server.Start();
-
          //CreateSynchronousServerOne();
          //CreateSynchronousServerTwo();
+         //CreateSynchronousServerThree();
 
          Console.ReadKey();
       }
@@ -149,7 +138,6 @@ namespace ConsoleExperiment
 
          server.Start();
       }
-
    }
 
    class HttpServer
