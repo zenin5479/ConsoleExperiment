@@ -135,7 +135,6 @@ namespace ConsoleExperiment
          }
       }
 
-
       static void CreateSynchronousServerThree()
       {
          int port = 8080;
