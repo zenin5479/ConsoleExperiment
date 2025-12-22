@@ -15,7 +15,7 @@ namespace ConsoleExperiment
          bool flag = true;
 
          //ресурс, который будет запрашивать пользователь
-         string uri = @"http://192.168.10.1:8080/say/";
+         string uri = "http://192.168.10.1:8080/say/";
 
          void StartServer(string prefix)
          {
@@ -90,20 +90,18 @@ namespace ConsoleExperiment
                   //преобразуем %CC%E0%EA%F1 -> Макс
                   text = System.Web.HttpUtility.UrlDecode(text, Encoding.UTF8);
                   //выводим имя
-                  MessageBox.Show("Ваше имя: " + text);
+                  Console.WriteLine("Ваше имя: " + text);
                   flag = true;
                   //останавливаем сервер
                   if (text == "stop")
                   {
                      server.Stop();
-                     this.Text = "Сервер остановлен!";
+                     Console.WriteLine("Сервер остановлен!");
                      flag = false;
                   }
                }
             }
          }
-
-
 
          StartServer(uri);
 
