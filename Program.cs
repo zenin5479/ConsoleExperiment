@@ -49,9 +49,12 @@ namespace ConsoleExperiment
                if (request.HttpMethod == "POST")
                {
                   //показать, что пришло от клиента
-                  ShowRequestData(request);
+                  Console.WriteLine(request);
                   //завершаем работу сервера
-                  if (!flag) return;
+                  if (!flag)
+                  {
+                     return;
+                  }
                }
                //формируем ответ сервера:
                //динамически создаём страницу
