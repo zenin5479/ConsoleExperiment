@@ -50,6 +50,9 @@ namespace ConsoleExperiment
                {
                   //показать, что пришло от клиента
                   Console.WriteLine(request);
+
+                  //показать, что пришло от клиента
+                  ShowRequestData(request);
                   //завершаем работу сервера
                   if (!flag)
                   {
@@ -72,6 +75,33 @@ namespace ConsoleExperiment
             }
          }
 
+         void ShowRequestData(HttpListenerRequest request)
+         {
+            //есть данные от клиента?
+            if (!request.HasEntityBody) return;
+            //смотрим, что пришло
+            using (Stream body = request.InputStream)
+            {
+               using (StreamReader reader = new StreamReader(body))
+               {
+                  string text = reader.ReadToEnd();
+                  //оставляем только имя
+                  text = text.Remove(0, 7);
+                  //преобразуем %CC%E0%EA%F1 -> Макс
+                  text = System.Web.HttpUtility.UrlDecode(text, Encoding.UTF8);
+                  //выводим имя
+                  MessageBox.Show("Ваше имя: " + text);
+                  flag = true;
+                  //останавливаем сервер
+                  if (text == "stop")
+                  {
+                     server.Stop();
+                     this.Text = "Сервер остановлен!";
+                     flag = false;
+                  }
+               }
+            }
+         }
 
 
 
