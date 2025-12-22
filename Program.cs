@@ -29,16 +29,16 @@ namespace ConsoleExperiment
          HttpListenerContext context = server.GetContext();
          // Получаем данные запроса
          HttpListenerRequest request = context.Request;
-         Console.WriteLine(string.Format("Адрес приложения: {0}", request.LocalEndPoint));
-         Console.WriteLine(string.Format("Адрес клиента: {0}", request.RemoteEndPoint));
+         Console.WriteLine("Адрес приложения: {0}", request.LocalEndPoint);
+         Console.WriteLine("Адрес клиента: {0}", request.RemoteEndPoint);
          Console.WriteLine(request.RawUrl);
-         Console.WriteLine(string.Format("Запрошен адрес: {0}", request.Url));
+         Console.WriteLine("Запрошен адрес: {0}", request.Url);
          Console.WriteLine("Заголовки запроса:");
          int i = 0;
          while (i < request.Headers.Keys.Count)
          {
             string item = request.Headers.Keys[i];
-            Console.WriteLine(string.Format("{0}:{1}", item, request.Headers[item]));
+            Console.WriteLine("{0}:{1}", item, request.Headers[item]);
             i++;
          }
 
