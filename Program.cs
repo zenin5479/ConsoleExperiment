@@ -22,7 +22,8 @@ namespace ConsoleExperiment
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
          server.Prefixes.Add("http://localhost:8080/");
-         server.Start(); // начинаем прослушивать входящие подключения
+         // начинаем прослушивать входящие подключения
+         server.Start(); 
          Console.WriteLine("Сервер запущен. Ожидание подключений...");
 
          // Получаем контекст
