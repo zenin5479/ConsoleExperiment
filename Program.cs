@@ -55,6 +55,7 @@ namespace ConsoleExperiment
 
             // Останавливаем сервер
             server.Stop();
+            server.Close();
          }
       }
 
