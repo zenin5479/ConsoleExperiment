@@ -32,7 +32,7 @@ namespace ConsoleExperiment
          Console.WriteLine(string.Format("Адрес приложения: {0}", request.LocalEndPoint));
          Console.WriteLine(string.Format("Адрес клиента: {0}", request.RemoteEndPoint));
          Console.WriteLine(request.RawUrl);
-         Console.WriteLine($"Запрошен адрес: {request.Url}");
+         Console.WriteLine(string.Format("Запрошен адрес: {0}", request.Url));
          Console.WriteLine("Заголовки запроса:");
          int i = 0;
          while (i < request.Headers.Keys.Count)
