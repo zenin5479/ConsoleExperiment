@@ -16,8 +16,10 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      
       static void CreateSynchronousServerOne()
       {
+         // Метод работет без прав администратора
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
          server.Prefixes.Add("http://localhost:8080/");
