@@ -29,7 +29,7 @@ namespace ConsoleExperiment
          HttpListenerContext context = server.GetContext();
          // Получаем данные запроса
          HttpListenerRequest request = context.Request;
-         Console.WriteLine($"Адрес приложения: {request.LocalEndPoint}");
+         Console.WriteLine(string.Format("Адрес приложения: {0}", request.LocalEndPoint));
          Console.WriteLine($"Адрес клиента: {request.RemoteEndPoint}");
          Console.WriteLine(request.RawUrl);
          Console.WriteLine($"Запрошен адрес: {request.Url}");
