@@ -7,8 +7,6 @@ namespace ConsoleExperiment
 {
    class Program
    {
-
-
       static void Main()
       {
          HttpListener server;
