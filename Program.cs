@@ -36,7 +36,7 @@ namespace ConsoleExperiment
             server.Prefixes.Add(prefix);
             //запускаем север
             server.Start();
-            this.Text = "Сервер запущен!";
+            Console.WriteLine("Сервер запущен!");
             //сервер запущен? Тогда слушаем входящие соединения
             while (server.IsListening)
             {
