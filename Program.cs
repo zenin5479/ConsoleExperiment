@@ -38,7 +38,7 @@ namespace ConsoleExperiment
          while (i < request.Headers.Keys.Count)
          {
             string item = request.Headers.Keys[i];
-            Console.WriteLine($"{item}:{request.Headers[item]}");
+            Console.WriteLine(string.Format("{0}:{1}", item, request.Headers[item]));
             i++;
          }
 
