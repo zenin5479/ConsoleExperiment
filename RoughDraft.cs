@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Net; //добавить
-using System.Text;
-
+﻿
 //public partial class Form1 : Form
 //{
 //   HttpListener server;
