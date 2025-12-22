@@ -16,9 +16,12 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      // Метод работет без прав администратора
+      // Метод работет без прав администратора 
       static void CreateSynchronousServerOne()
       {
+         // HttpListener. HTTP-сервер
+         //https://metanit.com/sharp/net/7.1.php?ysclid=mjgxsc9r5p234582411
+
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
          server.Prefixes.Add("http://127.0.0.1:8888/connection/");
