@@ -9,7 +9,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         //CreateSynchronousServerOne();
+         CreateSynchronousServerOne();
          //CreateSynchronousServerTwo();
          //CreateSynchronousServerThree();
 
@@ -20,7 +20,7 @@ namespace ConsoleExperiment
       {
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
-         server.Prefixes.Add("http://127.0.0.1:8888/connection/");
+         server.Prefixes.Add("http://localhost:8080/");
          server.Start(); // начинаем прослушивать входящие подключения
          Console.WriteLine("Сервер запущен. Ожидание подключений...");
 
