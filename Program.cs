@@ -9,37 +9,6 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         
-
-         void ShowRequestData(HttpListenerRequest request)
-         {
-            //есть данные от клиента?
-            if (!request.HasEntityBody) return;
-            //смотрим, что пришло
-            using (Stream body = request.InputStream)
-            {
-               using (StreamReader reader = new StreamReader(body))
-               {
-                  string text = reader.ReadToEnd();
-                  //оставляем только имя
-                  text = text.Remove(0, 7);
-                  //преобразуем %CC%E0%EA%F1 -> Макс
-                  text = System.Web.HttpUtility.UrlDecode(text, Encoding.UTF8);
-                  //выводим имя
-                  Console.WriteLine("Ваше имя: " + text);
-                  flag = true;
-                  //останавливаем сервер
-                  if (text == "stop")
-                  {
-                     server.Stop();
-                     Console.WriteLine("Сервер остановлен!");
-                     flag = false;
-                  }
-               }
-            }
-         }
-
-         StartServer(uri);
 
          //CreateSynchronousServerOne();
          //CreateSynchronousServerTwo();
