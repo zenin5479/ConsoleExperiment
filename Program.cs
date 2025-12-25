@@ -17,7 +17,7 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      // Метод работет без прав администратора 
+      // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
       static void CreateSynchronousServerOne()
       {
          // HttpListener. HTTP-сервер
