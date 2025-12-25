@@ -65,6 +65,7 @@ namespace ConsoleExperiment
          }
       }
 
+      
       static void CreateSynchronousServerTwo()
       {
          // Создаём экземпляр HttpListener
@@ -72,7 +73,7 @@ namespace ConsoleExperiment
 
          // Добавляем префиксы (адреса, на которых сервер будет слушать запросы)
          // Можно указать несколько префиксов
-         listener.Prefixes.Add("http://localhost:8080/");
+         listener.Prefixes.Add("http://127.0.0.1:8888/connection/");
          listener.Prefixes.Add("http://127.0.0.1:8080/");
 
          try
