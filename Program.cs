@@ -9,69 +9,7 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         HttpListener server;
-         bool flag = true;
-
-         //ресурс, который будет запрашивать пользователь
-         string uri = "http://192.168.10.1:8080/say/";
-
-         void StartServer(string prefix)
-         {
-            server = new HttpListener();
-            // текущая ос не поддерживается
-            if (!HttpListener.IsSupported)
-            {
-               return;
-            }
-
-            //добавление префикса (say/)
-            //обязательно в конце должна быть косая черта
-            if (string.IsNullOrEmpty(prefix))
-            {
-               throw new ArgumentException("prefix");
-            }
-
-            server.Prefixes.Add(prefix);
-            //запускаем север
-            server.Start();
-            Console.WriteLine("Сервер запущен!");
-            //сервер запущен? Тогда слушаем входящие соединения
-            while (server.IsListening)
-            {
-               //ожидаем входящие запросы
-               HttpListenerContext context = server.GetContext();
-               //получаем входящий запрос
-               HttpListenerRequest request = context.Request;
-               //обрабатываем POST запрос
-               //запрос получен методом POST (пришли данные формы)
-               if (request.HttpMethod == "POST")
-               {
-                  //показать, что пришло от клиента
-                  Console.WriteLine(request);
-
-                  //показать, что пришло от клиента
-                  ShowRequestData(request);
-                  //завершаем работу сервера
-                  if (!flag)
-                  {
-                     return;
-                  }
-               }
-               //формируем ответ сервера:
-               //динамически создаём страницу
-               string responseString =
-                  @"<!DOCTYPE HTML><html><head></head><body><form method=""post"" action=""say""><p><b>Name: </b><br><input type=""text"" name=""myname"" size=""40""></p><p><input type=""submit"" value=""send""></p></form></body></html>";
-               //отправка данных клиенту
-               HttpListenerResponse response = context.Response;
-               response.ContentType = "text/html; charset=UTF-8";
-               byte[] buffer = Encoding.UTF8.GetBytes(responseString);
-               response.ContentLength64 = buffer.Length;
-               using (Stream output = response.OutputStream)
-               {
-                  output.Write(buffer, 0, buffer.Length);
-               }
-            }
-         }
+         
 
          void ShowRequestData(HttpListenerRequest request)
          {
