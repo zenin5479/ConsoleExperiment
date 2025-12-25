@@ -65,7 +65,7 @@ namespace ConsoleExperiment
          }
       }
 
-      
+      // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
       static void CreateSynchronousServerTwo()
       {
          // Создаём экземпляр HttpListener
