@@ -50,7 +50,7 @@ namespace ConsoleExperiment
 
          // Получаем объект для установки ответа
          HttpListenerResponse response = context.Response;
-         byte[] buffer = Encoding.UTF8.GetBytes("Hello METANIT");
+         byte[] buffer = Encoding.UTF8.GetBytes("Hello WORLD");
          // Получаем поток ответа и пишем в него ответ
          response.ContentLength64 = buffer.Length;
          using (Stream output = response.OutputStream)
