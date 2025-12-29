@@ -122,7 +122,7 @@ namespace ConsoleExperiment
          }
          catch (Exception ex)
          {
-            Console.WriteLine(string.Format("Неожиданная ошибка: {0}", ex.Message));
+            Console.WriteLine("Неожиданная ошибка: {0}", ex.Message);
          }
          finally
          {
