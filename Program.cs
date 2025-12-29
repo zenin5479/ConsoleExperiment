@@ -10,60 +10,13 @@ namespace ConsoleExperiment
       static void Main()
       {
 
-         //CreateSynchronousServerOne();
+         CreateSynchronousServerOne();
          //CreateSynchronousServerTwo();
-         CreateSynchronousServerThree();
+         //CreateSynchronousServerThree();
 
          Console.ReadKey();
       }
 
-      // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
-      static void CreateSynchronousServerOne()
-      {
-         // HttpListener. HTTP-сервер
-         //https://metanit.com/sharp/net/7.1.php?ysclid=mjgxsc9r5p234582411
-
-         HttpListener server = new HttpListener();
-         // Установка адресов прослушки
-         server.Prefixes.Add("http://127.0.0.1:8080/");
-         //server.Prefixes.Add("http://localhost:8080/");
-         // Начинаем прослушивать входящие подключения
-         server.Start();
-         Console.WriteLine("Сервер запущен. Ожидание подключений...");
-
-         // Получаем контекст
-         HttpListenerContext context = server.GetContext();
-         // Получаем данные запроса
-         HttpListenerRequest request = context.Request;
-         Console.WriteLine("Адрес приложения: {0}", request.LocalEndPoint);
-         Console.WriteLine("Адрес клиента: {0}", request.RemoteEndPoint);
-         Console.WriteLine(request.RawUrl);
-         Console.WriteLine("Запрошен адрес: {0}", request.Url);
-         Console.WriteLine("Заголовки запроса:");
-         int i = 0;
-         while (i < request.Headers.Keys.Count)
-         {
-            string item = request.Headers.Keys[i];
-            Console.WriteLine("{0}:{1}", item, request.Headers[item]);
-            i++;
-         }
-
-         // Получаем объект для установки ответа
-         HttpListenerResponse response = context.Response;
-         byte[] buffer = Encoding.UTF8.GetBytes("Привет от синхронного сервера!");
-         // Получаем поток ответа и пишем в него ответ
-         response.ContentLength64 = buffer.Length;
-         using (Stream output = response.OutputStream)
-         {
-            // Отправляем данные
-            output.Write(buffer);
-            output.Flush();
-
-            // Останавливаем сервер
-            server.Stop();
-            server.Close();
-         }
-      }
 
       // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
       static void CreateSynchronousServerTwo()
@@ -133,6 +86,7 @@ namespace ConsoleExperiment
          }
       }
 
+      // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
       static void CreateSynchronousServerThree()
       {
          string port = "http://127.0.0.1:8888/connection/";
