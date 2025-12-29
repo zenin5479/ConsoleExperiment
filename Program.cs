@@ -199,25 +199,27 @@ namespace ConsoleExperiment
          Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
          string responseString;
          int statusCode = 200;
-         switch (request.HttpMethod)
+         if (request.HttpMethod == "GET")
          {
-            case "GET":
-               responseString = HandleGet(request);
-               break;
-            case "POST":
-               responseString = HandlePost(request);
-               break;
-            case "PUT":
-               responseString = HandlePut(request);
-               break;
-            case "DELETE":
-               responseString = HandleDelete(request);
-               break;
-            default:
-               statusCode = 405;
-               // Метод не поддерживается
-               responseString = "Метод не поддерживается";
-               break;
+            responseString = HandleGet(request);
+         }
+         else if (request.HttpMethod == "POST")
+         {
+            responseString = HandlePost(request);
+         }
+         else if (request.HttpMethod == "PUT")
+         {
+            responseString = HandlePut(request);
+         }
+         else if (request.HttpMethod == "DELETE")
+         {
+            responseString = HandleDelete(request);
+         }
+         else
+         {
+            statusCode = 405;
+            // Метод не поддерживается
+            responseString = "Метод не поддерживается";
          }
 
          // Формирование ответа
