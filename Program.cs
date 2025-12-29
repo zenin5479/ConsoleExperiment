@@ -164,7 +164,7 @@ namespace ConsoleExperiment
       public void Start()
       {
          _listener.Start();
-         Console.WriteLine($"Сервер запущен, порт: {_port}. Ожидание запросов...");
+         Console.WriteLine(string.Format("Сервер запущен, порт: {0}. Ожидание запросов...", _port));
 
          while (_listener.IsListening)
          {
