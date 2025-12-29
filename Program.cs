@@ -9,9 +9,9 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-
+         CreateSynchronousServerOne();
          CreateSynchronousServerTwo();
-         //CreateSynchronousServerThree();
+
 
          Console.ReadKey();
       }
@@ -84,7 +84,7 @@ namespace ConsoleExperiment
       }
 
       // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
-      static void CreateSynchronousServerThree()
+      static void CreateSynchronousServerOne()
       {
          string port = "http://127.0.0.1:8888/connection/";
          HttpServer server = new HttpServer(port);
