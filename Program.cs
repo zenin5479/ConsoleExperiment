@@ -164,7 +164,7 @@ namespace ConsoleExperiment
       public void Start()
       {
          _listener.Start();
-         Console.WriteLine(string.Format("Сервер запущен, порт: {0}. Ожидание запросов...", _port));
+         Console.WriteLine("Сервер запущен, порт: {0}. Ожидание запросов...", _port);
 
          while (_listener.IsListening)
          {
@@ -181,7 +181,7 @@ namespace ConsoleExperiment
             }
             catch (Exception ex)
             {
-               Console.WriteLine($"Ошибка обработки запроса: {ex.Message}");
+               Console.WriteLine("Ошибка обработки запроса: {0}", ex.Message);
             }
          }
       }
