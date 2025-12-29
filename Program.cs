@@ -10,13 +10,11 @@ namespace ConsoleExperiment
       static void Main()
       {
 
-         CreateSynchronousServerOne();
-         //CreateSynchronousServerTwo();
+         CreateSynchronousServerTwo();
          //CreateSynchronousServerThree();
 
          Console.ReadKey();
       }
-
 
       // Метод работет без прав администратора (порт: http://127.0.0.1:8888/connection/)
       static void CreateSynchronousServerTwo()
@@ -27,8 +25,7 @@ namespace ConsoleExperiment
          // Добавляем префиксы (адреса, на которых сервер будет слушать запросы)
          // Можно указать несколько префиксов
          listener.Prefixes.Add("http://127.0.0.1:8888/connection/");
-         listener.Prefixes.Add("http://127.0.0.1:8080/");
-
+         //listener.Prefixes.Add("http://127.0.0.1:8080/");
          try
          {
             // Запускаем прослушивание
