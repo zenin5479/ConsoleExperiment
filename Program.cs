@@ -118,7 +118,7 @@ namespace ConsoleExperiment
          }
          catch (HttpListenerException ex)
          {
-            Console.WriteLine(string.Format("Ошибка HttpListener: {0}", ex.Message));
+            Console.WriteLine("Ошибка HttpListener: {0}", ex.Message);
          }
          catch (Exception ex)
          {
