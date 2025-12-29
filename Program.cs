@@ -93,7 +93,7 @@ namespace ConsoleExperiment
                HttpListenerResponse response = context.Response;
 
                // Логируем запрос
-               Console.WriteLine(string.Format("Получен запрос: {0} {1}", request.HttpMethod, request.Url));
+               Console.WriteLine("Получен запрос: {0} {1}", request.HttpMethod, request.Url);
 
                // Формируем ответ
                string responseString = "<html><body><h1>Привет от синхронного сервера!</h1>" +
@@ -118,11 +118,11 @@ namespace ConsoleExperiment
          }
          catch (HttpListenerException ex)
          {
-            Console.WriteLine($"Ошибка HttpListener: {ex.Message}");
+            Console.WriteLine(string.Format("Ошибка HttpListener: {0}", ex.Message));
          }
          catch (Exception ex)
          {
-            Console.WriteLine($"Неожиданная ошибка: {ex.Message}");
+            Console.WriteLine(string.Format("Неожиданная ошибка: {0}", ex.Message));
          }
          finally
          {
