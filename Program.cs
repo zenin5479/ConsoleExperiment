@@ -196,7 +196,7 @@ namespace ConsoleExperiment
       {
          HttpListenerRequest request = context.Request;
          HttpListenerResponse response = context.Response;
-         Console.WriteLine($"{request.HttpMethod} {request.Url.PathAndQuery}");
+         Console.WriteLine("{0} {1}", request.HttpMethod, request.Url.PathAndQuery);
          string responseString;
          int statusCode = 200;
          if (request.HttpMethod == "GET")
