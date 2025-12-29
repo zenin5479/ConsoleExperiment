@@ -97,7 +97,8 @@ namespace ConsoleExperiment
 
                // Формируем ответ
                string responseString = "<html><body><h1>Привет от синхронного сервера!</h1>" +
-                                       $"<p>Время: {DateTime.Now}</p></body></html>";
+                                       string.Format("<p>Время: {0}</p></body></html>",
+                                          DateTime.Now);
                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
                // Настраиваем ответ
