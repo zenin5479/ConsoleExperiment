@@ -135,7 +135,7 @@ namespace ConsoleExperiment
 
       static void CreateSynchronousServerThree()
       {
-         string port = "http://127.0.0.1:8080/";
+         string port = "http://127.0.0.1:8888/connection/";
          HttpServer server = new HttpServer(port);
          Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
          void SpecifyName(object sender, ConsoleCancelEventArgs e)
