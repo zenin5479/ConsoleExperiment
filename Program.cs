@@ -93,7 +93,7 @@ namespace ConsoleExperiment
                HttpListenerResponse response = context.Response;
 
                // Логируем запрос
-               Console.WriteLine($"Получен запрос: {request.HttpMethod} {request.Url}");
+               Console.WriteLine(string.Format("Получен запрос: {0} {1}", request.HttpMethod, request.Url));
 
                // Формируем ответ
                string responseString = "<html><body><h1>Привет от синхронного сервера!</h1>" +
