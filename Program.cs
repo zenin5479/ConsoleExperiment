@@ -11,8 +11,8 @@ namespace ConsoleExperiment
       {
 
          //CreateSynchronousServerOne();
-         CreateSynchronousServerTwo();
-         //CreateSynchronousServerThree();
+         //CreateSynchronousServerTwo();
+         CreateSynchronousServerThree();
 
          Console.ReadKey();
       }
@@ -25,7 +25,7 @@ namespace ConsoleExperiment
 
          HttpListener server = new HttpListener();
          // Установка адресов прослушки
-         server.Prefixes.Add("http://127.0.0.1:8888/connection/");
+         server.Prefixes.Add("http://127.0.0.1:8080/");
          //server.Prefixes.Add("http://localhost:8080/");
          // Начинаем прослушивать входящие подключения
          server.Start();
@@ -50,7 +50,7 @@ namespace ConsoleExperiment
 
          // Получаем объект для установки ответа
          HttpListenerResponse response = context.Response;
-         byte[] buffer = Encoding.UTF8.GetBytes("Hello WORLD");
+         byte[] buffer = Encoding.UTF8.GetBytes("Привет от синхронного сервера!");
          // Получаем поток ответа и пишем в него ответ
          response.ContentLength64 = buffer.Length;
          using (Stream output = response.OutputStream)
@@ -135,7 +135,7 @@ namespace ConsoleExperiment
 
       static void CreateSynchronousServerThree()
       {
-         int port = 8080;
+         string port = "http://127.0.0.1:8080/";
          HttpServer server = new HttpServer(port);
          Console.WriteLine("Нажмите Ctrl+C для остановки сервера...");
          void SpecifyName(object sender, ConsoleCancelEventArgs e)
@@ -153,13 +153,13 @@ namespace ConsoleExperiment
    class HttpServer
    {
       private HttpListener _listener;
-      private int _port;
+      private string _port;
 
-      public HttpServer(int port)
+      public HttpServer(string port)
       {
          _port = port;
          _listener = new HttpListener();
-         _listener.Prefixes.Add(string.Format("http://+:{0}/", _port));
+         _listener.Prefixes.Add(string.Format(_port));
       }
 
       public void Start()
