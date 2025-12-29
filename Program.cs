@@ -158,7 +158,7 @@ namespace ConsoleExperiment
       {
          _port = port;
          _listener = new HttpListener();
-         _listener.Prefixes.Add($"http://+:{_port}/");
+         _listener.Prefixes.Add(string.Format("http://+:{0}/", _port));
       }
 
       public void Start()
