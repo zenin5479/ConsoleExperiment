@@ -10,7 +10,7 @@ namespace ConsoleExperiment
       static void Main()
       {
          CreateSynchronousServerOne();
-         CreateSynchronousServerTwo();
+         //CreateSynchronousServerTwo();
 
 
          Console.ReadKey();
