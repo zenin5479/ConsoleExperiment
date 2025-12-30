@@ -12,7 +12,6 @@ namespace ConsoleExperiment
          CreateSynchronousServerOne();
          //CreateSynchronousServerTwo();
 
-
          Console.ReadKey();
       }
 
