@@ -20,7 +20,6 @@ namespace ConsoleExperiment
       {
          // Создаём экземпляр HttpListener
          HttpListener listener = new HttpListener();
-
          // Добавляем префиксы (адреса, на которых сервер будет слушать запросы)
          // Можно указать несколько префиксов
          listener.Prefixes.Add("http://127.0.0.1:8888/connection/");
@@ -30,13 +29,11 @@ namespace ConsoleExperiment
             // Запускаем прослушивание
             listener.Start();
             Console.WriteLine("Сервер запущен. Ожидание запросов...");
-
             // Бесконечный цикл обработки запросов
             while (true)
             {
                // Блокирующий вызов: ждёт прихода запроса
                HttpListenerContext context = listener.GetContext();
-
                // Получаем запрос и ответ
                HttpListenerRequest request = context.Request;
                HttpListenerResponse response = context.Response;
