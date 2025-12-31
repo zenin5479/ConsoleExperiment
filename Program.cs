@@ -190,10 +190,12 @@ namespace ConsoleExperiment
          }
 
          using (Stream body = request.InputStream)
-         using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
          {
-            string bodyText = reader.ReadToEnd();
-            return "{\"method\": \"POST\", \"data\": \"" + bodyText + "\", \"status\": \"received\"}";
+            using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
+            {
+               string bodyText = reader.ReadToEnd();
+               return "{\"method\": \"POST\", \"data\": \"" + bodyText + "\", \"status\": \"received\"}";
+            }
          }
       }
 
