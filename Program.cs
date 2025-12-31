@@ -205,10 +205,12 @@ namespace ConsoleExperiment
          }
 
          using (Stream body = request.InputStream)
-         using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
          {
-            string bodyText = reader.ReadToEnd();
-            return "{\"method\": \"PUT\", \"data\": \"" + bodyText + "\", \"status\": \"updated\"}";
+            using (StreamReader reader = new StreamReader(body, request.ContentEncoding))
+            {
+               string bodyText = reader.ReadToEnd();
+               return "{\"method\": \"PUT\", \"data\": \"" + bodyText + "\", \"status\": \"updated\"}";
+            }
          }
       }
 
