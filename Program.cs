@@ -14,6 +14,12 @@ namespace ConsoleExperiment
 
          //double resul = Calculate(inputValue);
          //Console.WriteLine(resul);
+         
+         while (true)
+         {
+            //double resul = Calculate(inputValue);
+            //Console.WriteLine(resul);
+         }
 
          long iterations = 0;
          while (true)
