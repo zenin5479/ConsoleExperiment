@@ -31,7 +31,8 @@ namespace ConsoleExperiment
 
       private static int CalculateConsole(double input)
       {
-         int iterationCount = 0; // Счётчик итераций
+         // Счётчик итераций
+         int iterationCount = 0; 
 
          while (true) // Бесконечный цикл
          {
