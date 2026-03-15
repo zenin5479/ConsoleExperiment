@@ -17,17 +17,17 @@ namespace ConsoleExperiment
          
          while (true)
          {
-            //double resul = Calculate(inputValue);
-            //Console.WriteLine(resul);
+            double resul = Calculate(inputValue);
+            Console.WriteLine(resul);
          }
 
-         long iterations = 0;
-         while (true)
-         {
-            iterations++;
-            double result = inputValue * iterations;
-            Console.WriteLine("Итерация: {0}", result);
-         }
+         //long iterations = 0;
+         //while (true)
+         //{
+         //   iterations++;
+         //   double result = inputValue * iterations;
+         //   Console.WriteLine("Итерация: {0}", result);
+         //}
       }
 
       private static double Calculate(double input)
@@ -42,11 +42,6 @@ namespace ConsoleExperiment
             double result = input * iterations;
             Console.WriteLine("\nИтерация: {0}", result);
             Console.WriteLine();
-            // Периодически выводим значение счётчика
-            if (iterations % 1_000_000 == 0)
-            {
-               Console.WriteLine("Выполнено итераций: {0:N0}", iterations);
-            }
 
             return result;
          }
