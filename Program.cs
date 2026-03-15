@@ -12,17 +12,16 @@ namespace ConsoleExperiment
          //double result = CalculateConsole(inputValue);
          //Console.WriteLine(result);
 
-         //double resul = Calculate(inputValue);
-         //Console.WriteLine(resul);
+         Calculate(inputValue);
 
 
-         long iterations = 0;
-         while (true)
-         {
-            iterations++;
-            double result = inputValue * iterations;
-            Console.WriteLine("Итерация: {0}", result);
-         }
+         //long iterations = 0;
+         //while (true)
+         //{
+         //   iterations++;
+         //   double result = inputValue * iterations;
+         //   Console.WriteLine("Итерация: {0}", result);
+         //}
       }
 
       private static void Calculate(double input)
@@ -36,8 +35,6 @@ namespace ConsoleExperiment
 
             double result = input * iterations;
             Console.WriteLine("\nИтерация: {0}", result);
-            Console.WriteLine();
-            return;
          }
       }
 
