@@ -25,9 +25,9 @@ namespace ConsoleExperiment
 
       private static void Calculate(double input)
       {
-         // используем long, чтобы избежать переполнения int
+         // Используем long, чтобы избежать переполнения int
          long iterations = 0; 
-         // бесконечный цикл
+         // Бесконечный цикл
          while (true)         
          {
             iterations++;
