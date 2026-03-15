@@ -30,6 +30,23 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
+      private static double Calculate(double input)
+      {
+         long iterations = 0; // используем long, чтобы избежать переполнения int
+         while (true)         // бесконечный цикл
+         {
+            iterations++;
+
+            // Периодически выводим значение счётчика
+            if (iterations % 1_000_000 == 0)
+            {
+               Console.WriteLine("Выполнено итераций: {0:N0}", iterations);
+            }
+
+            // Здесь можно разместить любую другую логику
+         }
+      }
+
       private static double CalculateConsole(double input)
       {
          // Счётчик итераций
