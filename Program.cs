@@ -14,7 +14,6 @@ namespace ConsoleExperiment
 
          Calculate(inputValue);
 
-
          //long iterations = 0;
          //while (true)
          //{
@@ -42,18 +41,14 @@ namespace ConsoleExperiment
       {
          // Счётчик итераций
          int iterationCount = 0;
-
          // Бесконечный цикл
          while (true)
          {
             // Увеличиваем счётчик на каждой итерации
             iterationCount++;
-
             double result = input * iterationCount;
             Console.Write(result);
-            Console.WriteLine("\nИтерация: {0}", iterationCount);
-            Console.WriteLine();
-
+            Console.WriteLine("Итерация: {0}", iterationCount);
             return result;
          }
       }
