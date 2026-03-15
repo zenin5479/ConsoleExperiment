@@ -32,11 +32,12 @@ namespace ConsoleExperiment
       private static int CalculateConsole(double input)
       {
          // Счётчик итераций
-         int iterationCount = 0; 
-// Бесконечный цикл
-         while (true) 
+         int iterationCount = 0;
+         // Бесконечный цикл
+         while (true)
          {
-            iterationCount++; // Увеличиваем счётчик на каждой итерации
+            // Увеличиваем счётчик на каждой итерации
+            iterationCount++;
 
             Console.WriteLine("Итерация: {0}", iterationCount);
             Console.WriteLine();
