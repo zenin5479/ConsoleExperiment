@@ -9,7 +9,8 @@ namespace ConsoleExperiment
          // Выполняем расчёт с использованием консоли
 
          double inputValue = 256;
-         int result = CalculateConsole(inputValue);
+         double result = CalculateConsole(inputValue);
+         Console.WriteLine(result);
 
 
          //long iterations = 0; // используем long, чтобы избежать переполнения int
@@ -29,21 +30,23 @@ namespace ConsoleExperiment
          Console.ReadKey();
       }
 
-      private static int CalculateConsole(double input)
+      private static double CalculateConsole(double input)
       {
          // Счётчик итераций
          int iterationCount = 0;
+
          // Бесконечный цикл
          while (true)
          {
             // Увеличиваем счётчик на каждой итерации
             iterationCount++;
 
+            double result = input * iterationCount;
+            Console.Write(result);
             Console.WriteLine("Итерация: {0}", iterationCount);
             Console.WriteLine();
 
-            // Здесь можно разместить любую логику, выполняемую на каждой итерации
-            return iterationCount;
+            return result;
          }
       }
    }
