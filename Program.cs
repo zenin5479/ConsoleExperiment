@@ -33,8 +33,8 @@ namespace ConsoleExperiment
       {
          // Счётчик итераций
          int iterationCount = 0; 
-
-         while (true) // Бесконечный цикл
+// Бесконечный цикл
+         while (true) 
          {
             iterationCount++; // Увеличиваем счётчик на каждой итерации
 
