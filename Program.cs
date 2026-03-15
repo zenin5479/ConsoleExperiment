@@ -8,7 +8,7 @@ namespace ConsoleExperiment
       {
          // Выполняем расчёт с использованием консоли
 
-         double inputValue = 256;
+         double inputValue = 1024;
          //double result = CalculateConsole(inputValue);
          //Console.WriteLine(result);
 
@@ -34,7 +34,7 @@ namespace ConsoleExperiment
             iterations++;
 
             double result = input * iterations;
-            Console.WriteLine("\nИтерация: {0}", result);
+            Console.WriteLine("Итерация: {0}", result);
          }
       }
 
