@@ -32,7 +32,9 @@ namespace ConsoleExperiment
 
       private static double Calculate(double input)
       {
-         long iterations = 0; // используем long, чтобы избежать переполнения int
+         // используем long, чтобы избежать переполнения int
+         long iterations = 0; 
+         
          while (true)         // бесконечный цикл
          {
             iterations++;
