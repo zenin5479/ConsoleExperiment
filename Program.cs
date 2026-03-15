@@ -16,13 +16,13 @@ namespace ConsoleExperiment
          //Console.WriteLine(resul);
 
 
-         //long iterations = 0;
-         //while (true)
-         //{
-         //   iterations++;
-         //   double result = inputValue * iterations;
-         //   Console.WriteLine("Итерация: {0}", result);
-         //}
+         long iterations = 0;
+         while (true)
+         {
+            iterations++;
+            double result = inputValue * iterations;
+            Console.WriteLine("Итерация: {0}", result);
+         }
       }
 
       private static void Calculate(double input)
