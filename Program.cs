@@ -23,7 +23,7 @@ namespace ConsoleExperiment
          {
             iterations++;
 
-            double result = iterations * iterations;
+            double result = inputValue * iterations;
             Console.WriteLine("Итерация: {0}", result);
             //Console.WriteLine();
             //// Периодически выводим значение счётчика
