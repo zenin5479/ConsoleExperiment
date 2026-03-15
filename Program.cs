@@ -19,7 +19,6 @@ namespace ConsoleExperiment
          while (true)
          {
             iterations++;
-
             double result = inputValue * iterations;
             Console.WriteLine("Итерация: {0}", result);
          }
