@@ -43,7 +43,7 @@ namespace ConsoleExperiment
 
             double result = input * iterationCount;
             Console.Write(result);
-            Console.WriteLine("Итерация: {0}", iterationCount);
+            Console.WriteLine("\nИтерация: {0}", iterationCount);
             Console.WriteLine();
 
             return result;
