@@ -6,8 +6,6 @@ namespace ConsoleExperiment
    {
       static void Main()
       {
-         // Выполняем расчёт с использованием консоли
-
          double inputValue = 1024;
          //double result = CalculateConsole(inputValue);
          //Console.WriteLine(result);
