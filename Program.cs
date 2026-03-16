@@ -10,15 +10,7 @@ namespace ConsoleExperiment
          //double result = CalculateConsole(inputValue);
          //Console.WriteLine(result);
 
-         Calculate(inputValue);
-
-         long iterations = 0;
-         while (true)
-         {
-            iterations++;
-            double result = inputValue * iterations;
-            Console.WriteLine("Итерация: {0}", result);
-         }
+         
       }
       
       private static double CalculateConsole(double input)
