@@ -13,7 +13,6 @@ namespace ConsoleExperiment
          {
             Console.WriteLine(num);
          }
-
       }
 
       private static IEnumerable<double> CalculateConsole(double input)
