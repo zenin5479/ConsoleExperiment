@@ -7,10 +7,10 @@ namespace ConsoleExperiment
       static void Main()
       {
          double inputValue = 1024;
-         //double result = CalculateConsole(inputValue);
-         //Console.WriteLine(result);
+         double result = CalculateConsole(inputValue);
+         Console.WriteLine(result);
 
-         
+
       }
       
       private static double CalculateConsole(double input)
