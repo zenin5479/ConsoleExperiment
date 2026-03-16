@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleExperiment
 {
@@ -7,11 +8,15 @@ namespace ConsoleExperiment
       static void Main()
       {
          double inputValue = 1024;
-         double result = CalculateConsole(inputValue);
-         Console.WriteLine(result);
+         IEnumerable<double> result = CalculateConsole(inputValue);
+         foreach (double num in result)
+         {
+            Console.WriteLine(num);
+         }
+
       }
 
-      private static double CalculateConsole(double input)
+      private static IEnumerable<double> CalculateConsole(double input)
       {
          int iterationCount = 0;
          while (true)
@@ -20,7 +25,7 @@ namespace ConsoleExperiment
             double result = input * iterationCount;
             Console.Write(result);
             Console.WriteLine("\nИтерация: {0}", iterationCount);
-            return result;
+            yield return result;
          }
       }
    }
