@@ -10,7 +10,7 @@ namespace ConsoleExperiment
          double result = CalculateConsole(inputValue);
          Console.WriteLine(result);
       }
-      
+
       private static double CalculateConsole(double input)
       {
          int iterationCount = 0;
